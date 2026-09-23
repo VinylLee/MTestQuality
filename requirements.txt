@@ -1,0 +1,7 @@
+# Install the PyTorch build appropriate for the local CUDA/CPU environment first
+# if the default PyPI wheel is not suitable.
+torch>=1.12
+transformers>=4.29,<5
+sentencepiece>=0.1.99
+tqdm>=4.64
+safetensors>=0.3

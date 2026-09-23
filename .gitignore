@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Downloaded model weights and Hugging Face caches
+nli_model_cache/
+.cache/
+
+# Input datasets and full per-record audit artifacts can be large or private.
+data/
+outputs/
+*.jsonl
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store

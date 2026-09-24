@@ -14,7 +14,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-项目首次运行时会从 Hugging Face 下载模型。若要把缓存放在项目目录：
+项目已包含当前 SNLI v3.3 审计所需的全部数据。首次推理时仍会从 Hugging Face 下载模型权重；若要把模型缓存放在项目目录：
 
 ```bash
 export HF_HOME="$PWD/nli_model_cache"
@@ -36,11 +36,24 @@ export HF_HOME="$PWD/nli_model_cache"
 
 若存在 `idx`、`pair_id`、`mr_id`、`mr_type`、`is_source`、`component_mrs` 等字段，脚本会原样保留，并用于生成相应分组统计。详细契约见 [`docs/OUTPUT_SCHEMA.md`](docs/OUTPUT_SCHEMA.md)。
 
+## 仓库内置数据
+
+当前仓库已经包含一套可直接运行和复核的 SNLI v3.3 数据：
+
+- [`data/snli_v3_3/source/snli.jsonl`](data/snli_v3_3/source/snli.jsonl)：增强前的 source 数据，9,824 条。
+- [`data/snli_v3_3/augmented/snli.jsonl`](data/snli_v3_3/augmented/snli.jsonl)：source 与增强记录合并后的完整审计输入，23,205 条。
+- [`data/snli_v3_3/augmented/snli.report.json`](data/snli_v3_3/augmented/snli.report.json)：增强数据生成报告。
+- [`outputs/snli_v3_3_cross_encoder_deberta_v3_large/`](outputs/snli_v3_3_cross_encoder_deberta_v3_large/)：该输入的完整已生成审计结果。
+
+文件说明、行数和 SHA-256 见 [`data/README.md`](data/README.md)。从 GitHub 克隆本仓库后，无需再从 MTrain 或其他数据目录复制输入。
+
+这些数据衍生自 SNLI；数据来源、修改说明、许可和论文引用见 [`DATA_LICENSE.md`](DATA_LICENSE.md)。
+
 ## 使用
 
 ```bash
-python evaluate_nli_quality.py /path/to/dataset.jsonl \
-  --output-dir outputs/my_audit \
+python evaluate_nli_quality.py data/snli_v3_3/augmented/snli.jsonl \
+  --output-dir outputs/snli_v3_3_rerun \
   --device cuda:0 \
   --batch-size 128 \
   --max-length 256 \
@@ -74,7 +87,7 @@ python evaluate_nli_quality.py data.jsonl \
 - `pair_quality.jsonl`：按 `pair_id` 汇总，便于整组筛选并防止数据切分泄漏。
 - `summary.json`：总体和分组指标、混淆矩阵、不同阈值表现、模型 revision、输入哈希及运行环境。
 
-仓库不追踪完整数据集、模型权重和逐条 JSONL 结果。已有 SNLI v3.3 审计的轻量报告位于 [`reports/snli_v3_3_cross_encoder_deberta_v3_large/`](reports/snli_v3_3_cross_encoder_deberta_v3_large/)。
+仓库会追踪当前审计使用的数据集和逐条 JSONL 结果，因此可以直接复核现有结果或重新运行。已有 SNLI v3.3 完整审计位于 [`outputs/snli_v3_3_cross_encoder_deberta_v3_large/`](outputs/snli_v3_3_cross_encoder_deberta_v3_large/)。下载的模型权重仍由 Hugging Face cache 管理，不纳入 Git。
 
 ## 结果解释
 

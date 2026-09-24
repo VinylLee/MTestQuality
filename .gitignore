@@ -8,11 +8,6 @@ venv/
 nli_model_cache/
 .cache/
 
-# Input datasets and full per-record audit artifacts can be large or private.
-data/
-outputs/
-*.jsonl
-
 # IDE / OS files
 .vscode/
 .idea/

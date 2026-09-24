@@ -14,7 +14,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-项目已包含当前 SNLI v3.3 审计所需的全部数据。首次推理时仍会从 Hugging Face 下载模型权重；若要把模型缓存放在项目目录：
+项目已包含当前 SNLI v3.3 审计所需的全部数据，以及已增强完成、等待审计的 MNLI-mismatched v3.3 数据。首次推理时仍会从 Hugging Face 下载模型权重；若要把模型缓存放在项目目录：
 
 ```bash
 export HF_HOME="$PWD/nli_model_cache"
@@ -43,17 +43,31 @@ export HF_HOME="$PWD/nli_model_cache"
 - [`data/snli_v3_3/source/snli.jsonl`](data/snli_v3_3/source/snli.jsonl)：增强前的 source 数据，9,824 条。
 - [`data/snli_v3_3/augmented/snli.jsonl`](data/snli_v3_3/augmented/snli.jsonl)：source 与增强记录合并后的完整审计输入，23,205 条。
 - [`data/snli_v3_3/augmented/snli.report.json`](data/snli_v3_3/augmented/snli.report.json)：增强数据生成报告。
-- [`outputs/snli_v3_3_cross_encoder_deberta_v3_large/`](outputs/snli_v3_3_cross_encoder_deberta_v3_large/)：该输入的完整已生成审计结果。
+- [`data/mnlimm_v3_3/source/mnlimm.jsonl`](data/mnlimm_v3_3/source/mnlimm.jsonl)：MNLI validation mismatched source 数据，9,832 条。
+- [`data/mnlimm_v3_3/augmented/mnlimm.jsonl`](data/mnlimm_v3_3/augmented/mnlimm.jsonl)：MNLI-mismatched 完整增强数据，20,257 条。
+- [`data/mnlimm_v3_3/augmented/mnlimm.report.json`](data/mnlimm_v3_3/augmented/mnlimm.report.json)：MNLI-mismatched 增强数据生成报告。
+- [`outputs/snli_v3_3_cross_encoder_deberta_v3_large/`](outputs/snli_v3_3_cross_encoder_deberta_v3_large/)：SNLI 输入的完整已生成审计结果。
 
 文件说明、行数和 SHA-256 见 [`data/README.md`](data/README.md)。从 GitHub 克隆本仓库后，无需再从 MTrain 或其他数据目录复制输入。
 
-这些数据衍生自 SNLI；数据来源、修改说明、许可和论文引用见 [`DATA_LICENSE.md`](DATA_LICENSE.md)。
+内置数据分别衍生自 SNLI 与 MultiNLI；数据来源、修改说明、许可和论文引用见 [`DATA_LICENSE.md`](DATA_LICENSE.md)。
 
 ## 使用
 
 ```bash
 python evaluate_nli_quality.py data/snli_v3_3/augmented/snli.jsonl \
   --output-dir outputs/snli_v3_3_rerun \
+  --device cuda:0 \
+  --batch-size 128 \
+  --max-length 256 \
+  --confidence-threshold 0.90
+```
+
+MNLI-mismatched 增强数据可直接运行：
+
+```bash
+python evaluate_nli_quality.py data/mnlimm_v3_3/augmented/mnlimm.jsonl \
+  --output-dir outputs/mnlimm_v3_3_cross_encoder_deberta_v3_large \
   --device cuda:0 \
   --batch-size 128 \
   --max-length 256 \

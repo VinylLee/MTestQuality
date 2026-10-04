@@ -12,24 +12,35 @@ SNLI 官方项目页声明该语料采用 [Creative Commons Attribution-ShareAli
 
 ## MultiNLI 来源
 
-本仓库 `data/mnlimm_v3_3/` 中的数据衍生自 Multi-Genre Natural Language Inference（MultiNLI）Corpus 1.0 的 `validation_mismatched` split：
+本仓库 `data/mnlim_v3_3/` 与 `data/mnlimm_v3_3/` 中的数据分别衍生自 Multi-Genre Natural Language Inference（MultiNLI）Corpus 1.0 的 `validation_matched` 与 `validation_mismatched` split：
 
 - NYU 官方归档：https://archive.nyu.edu/handle/2451/41736
 - 原始项目页：https://www.nyu.edu/projects/bowman/multinli/
 - 作者：Adina Williams, Nikita Nangia, and Samuel R. Bowman
 
-NYU 官方归档将 MultiNLI 标记为允许分发，但许可随语料区段而异，并要求参照随语料发布的论文了解详情。MultiNLI 论文说明大部分非 FICTION 内容使用 Open American National Corpus 的许可，FICTION 内容使用若干其他宽松许可。使用或再分发 `mnlimm_v3_3` 时应保留本归属说明，并同时遵守 MultiNLI 分发包中适用于具体来源区段的许可条款。
+NYU 官方归档将 MultiNLI 标记为允许分发，但许可随语料区段而异，并要求参照随语料发布的论文了解详情。MultiNLI 论文说明大部分非 FICTION 内容使用 Open American National Corpus 的许可，FICTION 内容使用若干其他宽松许可。使用或再分发 `mnlim_v3_3` 与 `mnlimm_v3_3` 时应保留本归属说明，并同时遵守 MultiNLI 分发包中适用于具体来源区段的许可条款。
+
+## SICK 来源
+
+本仓库 `data/sick_v3_3/` 中的数据衍生自 Sentences Involving Compositional Knowledge（SICK）：
+
+- 作者项目页：https://marcobaroni.org/composes/sick.html
+- 数据归档：https://doi.org/10.5281/zenodo.2787612
+- 许可元数据：https://live.european-language-grid.eu/catalogue/corpus/21596
+- 作者：Marco Marelli, Stefano Menini, Marco Baroni, Luisa Bentivogli, Raffaella Bernardi, and Roberto Zamparelli
+
+SICK 作者项目页声明使用 Creative Commons Attribution-NonCommercial-ShareAlike 许可，数据归档的许可元数据明确版本为 [CC BY-NC-SA 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/)。仓库内包含 SICK 内容及其衍生文本的数据文件按同一许可提供，使用与再分发需保留归属、限于非商业用途，并以相同许可分享衍生内容。
 
 ## 修改说明
 
-相对原始 SNLI 与 MultiNLI，本仓库中的数据经过了以下处理：
+相对原始 SNLI、MultiNLI 与 SICK，本仓库中的数据经过了以下处理：
 
 - 选择并转换为本项目使用的 JSONL 字段结构；
 - 使用 MTrain 的 metamorphic relations 生成 hypothesis 变体；
 - 增加 `idx`、`pair_id`、`mr_id`、`mr_type`、`is_source` 和部分 `component_mrs` 元数据；
-- 使用预训练 NLI 模型生成预测概率、置信度、一致性、pair 级统计和筛选视图。
+- 已审计的 SNLI 数据另使用预训练 NLI 模型生成预测概率、置信度、一致性、pair 级统计和筛选视图；其余三套尚未进行质量审计。
 
-这些修改与审计结果不代表 Stanford NLP Group 的认可。完整文件哈希和记录数见 `data/README.md`，生成配置见 `data/snli_v3_3/augmented/snli.report.json`。
+这些修改与审计结果不代表原始数据集作者或维护者的认可。完整文件哈希和记录数见 `data/README.md`，各数据集的生成配置见对应 `data/<dataset>_v3_3/augmented/*.report.json`。
 
 ## 引用
 
@@ -58,6 +69,19 @@ MultiNLI 数据还应引用：
   pages     = {1112--1122},
   doi       = {10.18653/v1/N18-1101},
   url       = {https://aclanthology.org/N18-1101}
+}
+```
+
+SICK 数据还应引用：
+
+```bibtex
+@inproceedings{marelli-etal-2014-sick,
+  title     = {A SICK Cure for the Evaluation of Compositional Distributional Semantic Models},
+  author    = {Marelli, Marco and Menini, Stefano and Baroni, Marco and Bentivogli, Luisa and Bernardi, Raffaella and Zamparelli, Roberto},
+  booktitle = {Proceedings of the Ninth International Conference on Language Resources and Evaluation (LREC'14)},
+  year      = {2014},
+  pages     = {216--223},
+  url       = {https://aclanthology.org/L14-1314/}
 }
 ```
 

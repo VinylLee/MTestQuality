@@ -14,7 +14,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-项目已包含当前 SNLI v3.3 审计所需的全部数据，以及已增强完成、等待审计的 MNLI-mismatched v3.3 数据。首次推理时仍会从 Hugging Face 下载模型权重；若要把模型缓存放在项目目录：
+项目已包含 SNLI、MNLI-matched、MNLI-mismatched 和 SICK 四套 v3.3 数据；其中 SNLI 已审计，其余三套已增强完成并等待审计。首次推理时仍会从 Hugging Face 下载模型权重；若要把模型缓存放在项目目录：
 
 ```bash
 export HF_HOME="$PWD/nli_model_cache"
@@ -38,7 +38,7 @@ export HF_HOME="$PWD/nli_model_cache"
 
 ## 仓库内置数据
 
-当前仓库已经包含一套可直接运行和复核的 SNLI v3.3 数据：
+当前仓库已经包含四套可直接运行和复核的 v3.3 数据：
 
 - [`data/snli_v3_3/source/snli.jsonl`](data/snli_v3_3/source/snli.jsonl)：增强前的 source 数据，9,824 条。
 - [`data/snli_v3_3/augmented/snli.jsonl`](data/snli_v3_3/augmented/snli.jsonl)：source 与增强记录合并后的完整审计输入，23,205 条。
@@ -46,11 +46,17 @@ export HF_HOME="$PWD/nli_model_cache"
 - [`data/mnlimm_v3_3/source/mnlimm.jsonl`](data/mnlimm_v3_3/source/mnlimm.jsonl)：MNLI validation mismatched source 数据，9,832 条。
 - [`data/mnlimm_v3_3/augmented/mnlimm.jsonl`](data/mnlimm_v3_3/augmented/mnlimm.jsonl)：MNLI-mismatched 完整增强数据，20,257 条。
 - [`data/mnlimm_v3_3/augmented/mnlimm.report.json`](data/mnlimm_v3_3/augmented/mnlimm.report.json)：MNLI-mismatched 增强数据生成报告。
+- [`data/mnlim_v3_3/source/mnlim.jsonl`](data/mnlim_v3_3/source/mnlim.jsonl)：MNLI validation matched source 数据，9,815 条。
+- [`data/mnlim_v3_3/augmented/mnlim.jsonl`](data/mnlim_v3_3/augmented/mnlim.jsonl)：MNLI-matched 完整增强数据，20,249 条。
+- [`data/mnlim_v3_3/augmented/mnlim.report.json`](data/mnlim_v3_3/augmented/mnlim.report.json)：MNLI-matched 增强数据生成报告。
+- [`data/sick_v3_3/source/sick.jsonl`](data/sick_v3_3/source/sick.jsonl)：SICK source 数据，4,906 条。
+- [`data/sick_v3_3/augmented/sick.jsonl`](data/sick_v3_3/augmented/sick.jsonl)：SICK 完整增强数据，10,925 条。
+- [`data/sick_v3_3/augmented/sick.report.json`](data/sick_v3_3/augmented/sick.report.json)：SICK 增强数据生成报告。
 - [`outputs/snli_v3_3_cross_encoder_deberta_v3_large/`](outputs/snli_v3_3_cross_encoder_deberta_v3_large/)：SNLI 输入的完整已生成审计结果。
 
 文件说明、行数和 SHA-256 见 [`data/README.md`](data/README.md)。从 GitHub 克隆本仓库后，无需再从 MTrain 或其他数据目录复制输入。
 
-内置数据分别衍生自 SNLI 与 MultiNLI；数据来源、修改说明、许可和论文引用见 [`DATA_LICENSE.md`](DATA_LICENSE.md)。
+内置数据分别衍生自 SNLI、MultiNLI 与 SICK；数据来源、修改说明、许可和论文引用见 [`DATA_LICENSE.md`](DATA_LICENSE.md)。
 
 ## 使用
 
@@ -72,6 +78,18 @@ python evaluate_nli_quality.py data/mnlimm_v3_3/augmented/mnlimm.jsonl \
   --batch-size 128 \
   --max-length 256 \
   --confidence-threshold 0.90
+```
+
+MNLI-matched 与 SICK 增强数据可分别运行：
+
+```bash
+python evaluate_nli_quality.py data/mnlim_v3_3/augmented/mnlim.jsonl \
+  --output-dir outputs/mnlim_v3_3_cross_encoder_deberta_v3_large \
+  --device cuda:0 --batch-size 128 --max-length 256 --confidence-threshold 0.90
+
+python evaluate_nli_quality.py data/sick_v3_3/augmented/sick.jsonl \
+  --output-dir outputs/sick_v3_3_cross_encoder_deberta_v3_large \
+  --device cuda:0 --batch-size 128 --max-length 256 --confidence-threshold 0.90
 ```
 
 CPU 推理：

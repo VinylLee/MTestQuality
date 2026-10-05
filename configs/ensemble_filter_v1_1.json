@@ -1,0 +1,22 @@
+{
+  "policy_name": "conservative_consensus_v1_1",
+  "source_predictions_root": "outputs/ensemble_filter_v1",
+  "output_root": "outputs/ensemble_filter_v1_1",
+  "datasets": ["snli", "mnlim", "mnlimm", "sick"],
+  "dataset_paths": {
+    "snli": "data/snli_v3_3/augmented/snli.jsonl",
+    "mnlim": "data/mnlim_v3_3/augmented/mnlim.jsonl",
+    "mnlimm": "data/mnlimm_v3_3/augmented/mnlimm.jsonl",
+    "sick": "data/sick_v3_3/augmented/sick.jsonl"
+  },
+  "source_confidence_threshold": 0.80,
+  "wrong_vote_threshold": 0.95,
+  "gold_support_block_threshold": 0.90,
+  "conditional_clause_auto_drop": false,
+  "dataset_policies": {
+    "snli": {"min_eligible_voters": 3, "min_wrong_consensus": 3, "require_wanli_anchor": false, "require_unanimous": false},
+    "mnlim": {"min_eligible_voters": 3, "min_wrong_consensus": 3, "require_wanli_anchor": true, "wanli_anchor_model": "alisawuffles/roberta-large-wanli", "require_unanimous": false},
+    "mnlimm": {"min_eligible_voters": 3, "min_wrong_consensus": 3, "require_wanli_anchor": true, "wanli_anchor_model": "alisawuffles/roberta-large-wanli", "require_unanimous": false},
+    "sick": {"min_eligible_voters": 4, "min_wrong_consensus": 4, "require_wanli_anchor": false, "require_unanimous": true}
+  }
+}

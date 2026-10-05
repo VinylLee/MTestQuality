@@ -20,6 +20,8 @@ pip install -r requirements.txt
 export HF_HOME="$PWD/nli_model_cache"
 ```
 
+已有 V1 预测的 **V1.1 离线重新过滤不需要安装上述推理依赖、GPU、网络或模型缓存**，只需要 Python 3.9+ 标准库。后续实验优先使用 V1.1 的 `filtered.jsonl`，详见下方说明。
+
 ## 输入格式
 
 输入必须是 JSONL，每行至少包含：
@@ -170,9 +172,54 @@ python -m unittest discover -s tests -v
 
 已有输出不会被默认覆盖。`--resume` 会重新核验已完成单模型与 ensemble 的输入、配置、版本和产物哈希。失败的单模型日志保留在该数据集目录的 `.model_*-*/` 中；重新运行会使用新的临时目录。已有 SNLI baseline 只有通过固定 revision、输入、运行参数和完整逐行核验后才复用；历史请求 revision 仍记录为 `main`，实际使用的 resolved revision 已固定。原 SNLI 结果目录与输入文件保持不变。
 
+## V1.1：基于 V1 的纯离线 refilter
+
+规范见 [`docs/ENSEMBLE_FILTER_V1_1_PLAN.md`](docs/ENSEMBLE_FILTER_V1_1_PLAN.md)，配置见 [`configs/ensemble_filter_v1_1.json`](configs/ensemble_filter_v1_1.json)，结果报告见 [`outputs/ensemble_filter_v1_1/REPORT.md`](outputs/ensemble_filter_v1_1/REPORT.md)。入口 [`refilter_ensemble_v1_1.py`](refilter_ensemble_v1_1.py) 仅使用标准库，不导入 evaluator、torch、transformers 或任何推理路径；优先读取 V1 的 `ensemble_predictions.jsonl`，仅在预测字段缺失时离线 join 已保存的单模型 JSONL。
+
+正式参数固定：source 预测正确且 confidence ≥0.80 才能投票；错误票 confidence ≥0.95；合格 auditor 支持 gold 且 confidence ≥0.90 即阻止删除。不同模型的概率不平均。
+
+| 数据集 | 删除所需同向高置信错误共识 | 额外约束 |
+|---|---|---|
+| SNLI | 至少 3/4 | 无 |
+| MNLIM / MNLIMM | 至少 3/4 | 共识中必须包含 manifest 确认的 WANLI-only RoBERTa |
+| SICK | 4/4 | 四个模型全部通过 source gating |
+
+四套数据都禁止自动删除精确匹配 `mr_type` 或 `mr_id == "conditional_clause"` 的增强记录。决策优先级为 source 保留、结构无效/证据不全保留、conditional 保护、gold blocker、数据集共识规则。保留不是证明标签正确，删除也仍是自动审计信号，而非人工金标。
+
+```bash
+# 首次生成全部四套数据；不会运行任何模型。
+python refilter_ensemble_v1_1.py
+
+# 仓库已有正式结果时，使用新的目录复现；已有目录一律拒绝覆盖。
+python refilter_ensemble_v1_1.py --output-root outputs/ensemble_filter_v1_1_reproduced
+
+# 完整测试（包含原 V1 测试，需已安装原测试所依赖的 torch/transformers；不加载模型）
+python -m unittest discover -s tests -v
+
+# 只运行 V1.1 离线测试，不需要推理依赖
+python -m unittest discover -s tests -p '*v1_1.py' -v
+```
+
+默认只读输入是 `outputs/ensemble_filter_v1/`；可用 `--source-root` 指定另一份 V1 结果，原始输入路径仍由 V1.1 配置的 `dataset_paths` 决定。脚本核对 V1 manifest、产物哈希、行号、原始字段、分区顺序和 source 证据。运行前后检查整个 V1 目录及原始 data 目录的文件数量、SHA-256、大小和 mtime；所有数据集完成并通过完整性检查后，才一次性发布新输出目录。失败不发布正式结果，V1 和原始数据不被修改。
+
+后续实验输入：
+
+- [`outputs/ensemble_filter_v1_1/snli/filtered.jsonl`](outputs/ensemble_filter_v1_1/snli/filtered.jsonl)
+- [`outputs/ensemble_filter_v1_1/mnlim/filtered.jsonl`](outputs/ensemble_filter_v1_1/mnlim/filtered.jsonl)
+- [`outputs/ensemble_filter_v1_1/mnlimm/filtered.jsonl`](outputs/ensemble_filter_v1_1/mnlimm/filtered.jsonl)
+- [`outputs/ensemble_filter_v1_1/sick/filtered.jsonl`](outputs/ensemble_filter_v1_1/sick/filtered.jsonl)
+
+每套数据还包含完整 `ensemble_predictions.jsonl`、仅删除增强记录的 `removed.jsonl`、方便 spot-check 的 `rescued_from_v1.jsonl`、`ensemble_summary.json`、`policy_diff_from_v1.json` 和 provenance `model_manifest.json`。JSONL 原字段和 V1 的 `ensemble_quality` 完整保留，仅增加 `ensemble_quality_v1_1`，所有子集保留原顺序。
+
+根目录 `diff_v1_vs_v1_1.json` 汇总 SNLI、MNLIM、MNLIMM、SICK、TOTAL 的转移和按保护原因/MR/gold 的救回统计；`summary_all_datasets.json` 保存前后完整性凭据和诊断。阈值敏感性仅改变错误票阈值（0.90/0.95/0.99），gold blocker 固定 0.90；conditional 无保护的反事实统计只作诊断，不改变正式结果。真实 V1.1 删除必须是 V1 删除的子集，否则整次任务失败。
+
+本仓库真实 V1.1 结果：SNLI 删除 53 条、MNLIM 38 条、MNLIMM 32 条、SICK 4 条，总计 127 条（增强记录的 0.3155%）；相对 V1 的 190 条救回 63 条，新增删除 0 条，34,377 条 source 全部保留。前后核对的 161 个 V1 文件及全部原始 data 文件均未变化。详细分组、逐条证据及敏感性统计以结果目录的 JSON/报告为准。
+
+生成后完整测试共 78 项，全部通过、无跳过；测试期间模型/tokenizer/config 加载及 pipeline 调用均被拦截且调用次数为 0。验收记录见 [`outputs/ensemble_filter_v1_1/validation_receipt.json`](outputs/ensemble_filter_v1_1/validation_receipt.json)，其中保存测试结果、实现/配置哈希以及测试后的输入完整性复核结果。
+
 ## 后续计划
 
-多数据集接入、四模型交叉审计及保守筛选已实现。历史路线见 [`docs/ROADMAP.md`](docs/ROADMAP.md)，本次实现与验收依据见 ensemble 实施方案。
+多数据集接入、四模型交叉审计、保守筛选及 V1.1 离线重新过滤已实现。历史路线见 [`docs/ROADMAP.md`](docs/ROADMAP.md)，规则及验收依据见相应 ensemble 实施方案。
 
 ## 已验证环境
 

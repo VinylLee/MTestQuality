@@ -1,0 +1,41 @@
+{
+  "complete_test_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "errors": 0,
+    "failures": 0,
+    "passed": true,
+    "skipped": 0,
+    "tests_run": 78
+  },
+  "config_sha256": "ed1e5c5fe55182e853e2a13dbe670dd934116b377689159d4aab4599cabeb329",
+  "implementation_sha256": "8556d43ff4096af0a947002bad7ce2e1c9777077a96f5d917f8dce056a9c2a29",
+  "original_data_file_count": 13,
+  "original_data_integrity_verified_again_after_tests": true,
+  "production_refilter_inference_imports_blocked": [
+    "torch",
+    "transformers",
+    "huggingface_hub",
+    "evaluate_nli_quality",
+    "filter_nli_ensemble",
+    "run_ensemble_audit"
+  ],
+  "production_refilter_inference_performed": false,
+  "source_v1_file_count": 161,
+  "source_v1_integrity_verified_again_after_tests": true,
+  "tests_elapsed_seconds": 76.47,
+  "totals": {
+    "augmented_count": 40259,
+    "input_count": 74636,
+    "kept_augmented_count": 40132,
+    "removal_rate": 0.0031545741324921135,
+    "removed_augmented_count": 127,
+    "removed_source_count": 0,
+    "source_count": 34377
+  },
+  "verification_loader_guards": {
+    "AutoConfig.from_pretrained": 0,
+    "AutoModelForSequenceClassification.from_pretrained": 0,
+    "AutoTokenizer.from_pretrained": 0,
+    "pipeline": 0
+  }
+}

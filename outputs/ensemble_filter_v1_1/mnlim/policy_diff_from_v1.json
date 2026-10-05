@@ -1,0 +1,54 @@
+{
+  "changes_by_reason": {
+    "conditional_clause_auto_drop_disabled": 10,
+    "gold_support_block": 1,
+    "mnli_wrong_consensus_missing_wanli_anchor": 19,
+    "sick_requires_unanimous_consensus": 0
+  },
+  "dataset": "mnlim",
+  "drop_to_keep": 30,
+  "keep_to_drop": 0,
+  "rescued_by": {
+    "consensus_size": {
+      "3/4": 27,
+      "4/4": 3
+    },
+    "dataset": {
+      "mnlim": 30
+    },
+    "gold_label": {
+      "contradiction": 9,
+      "entailment": 1,
+      "neutral": 20
+    },
+    "mr_id": {
+      "adding_contradiction": 5,
+      "composite_neutral": 1,
+      "conditional_clause": 10,
+      "negation_flip": 3,
+      "pronoun_substitution": 1,
+      "synonym_replacement": 1,
+      "uninformative": 9
+    },
+    "mr_type": {
+      "flip": 8,
+      "inv": 2,
+      "neutral": 20
+    },
+    "reason": {
+      "conditional_clause_auto_drop_disabled": 10,
+      "gold_support_block": 1,
+      "mnli_wrong_consensus_missing_wanli_anchor": 19,
+      "sick_requires_unanimous_consensus": 0
+    },
+    "wrong_consensus_label": {
+      "contradiction": 8,
+      "entailment": 19,
+      "neutral": 3
+    }
+  },
+  "unchanged_drop": 38,
+  "unchanged_keep": 20181,
+  "v1_1_removed": 38,
+  "v1_removed": 68
+}

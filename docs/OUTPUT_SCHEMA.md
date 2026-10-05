@@ -89,3 +89,37 @@ source 的 reason 始终为 `source_preserved`，per-model 中记录其 source �
 `model_manifest.json` 按模型保存 name、requested/resolved revision、label order、映射来源、运行环境、输入哈希、单模型 predictions/summary 哈希，以及三份 ensemble JSONL 的哈希。Ensemble summary 不包含运行时钟信息，因此相同输入、配置和预测生成相同 decisions 与 summary。
 
 `summary_all_datasets.json` 包含四数据集总表、全部数据集 summary、汇总计数、MR/gold label removal rate 及三个阈值的敏感性。它只在所有配置数据集成功后发布。
+
+## V1.1 offline refilter additions
+
+`refilter_ensemble_v1_1.py` preserves all raw fields and the complete persisted
+V1 `ensemble_quality`; it adds only `ensemble_quality_v1_1`. This object includes
+the dataset, row position, decision/reason, all three independent thresholds,
+eligible count, same-wrong-label consensus/count/supporting model ids, gold
+blocker count/supporting ids, conditional protection, WANLI anchor requirement
+and membership, evidence completeness, and complete per-model prediction,
+confidence, source gold label, actual checkpoint identity, and recomputed vote
+flags. `v1_decision` is read from V1, not simulated; `v1_1_decision` equals
+`decision`, and `decision_changed` compares the persisted decisions.
+
+Reasons in priority order: `source_never_filtered`,
+`invalid_or_incomplete_evidence`, `conditional_clause_auto_drop_disabled`,
+`gold_support_block`, then dataset-specific
+`mnli_wrong_consensus_missing_wanli_anchor` /
+`sick_requires_unanimous_consensus`, `high_confidence_wrong_consensus` (DROP),
+or `insufficient_wrong_consensus`. Protection flags can be true even when an
+earlier reason wins. Source rows have no augmented voting evidence.
+
+`filtered.jsonl`, `removed.jsonl`, and `rescued_from_v1.jsonl` are ordered subsets
+of the new full ensemble file. The rescued subset is exactly V1 DROP → V1.1 KEEP.
+Diff JSON contains transition counts, changes by primary reason, and rescued
+counts by dataset, MR type/id, gold label, wrong label, and consensus size.
+Per-dataset summaries distinguish all/augmented/removed groups in `by`, and
+include eligibility coverage, supporting-vote confidence ranges, fixed-gold-
+blocker sensitivity, conditional counterfactual diagnostics, and V1 integrity
+receipts. Root summaries aggregate all four datasets and preserve full before/
+after SHA-256, size, mtime_ns, and file-count receipts for V1 and original data.
+
+Formal V1.1 parameters and dataset-specific rules are documented in
+[`ENSEMBLE_FILTER_V1_1_PLAN.md`](ENSEMBLE_FILTER_V1_1_PLAN.md). Existing V1 schemas
+and artifacts are unchanged.

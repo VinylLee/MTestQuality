@@ -1,0 +1,43 @@
+{
+  "changes_by_reason": {
+    "conditional_clause_auto_drop_disabled": 5,
+    "gold_support_block": 1,
+    "mnli_wrong_consensus_missing_wanli_anchor": 0,
+    "sick_requires_unanimous_consensus": 0
+  },
+  "dataset": "snli",
+  "drop_to_keep": 6,
+  "keep_to_drop": 0,
+  "rescued_by": {
+    "consensus_size": {
+      "3/4": 6
+    },
+    "dataset": {
+      "snli": 6
+    },
+    "gold_label": {
+      "neutral": 6
+    },
+    "mr_id": {
+      "conditional_clause": 5,
+      "uninformative": 1
+    },
+    "mr_type": {
+      "neutral": 6
+    },
+    "reason": {
+      "conditional_clause_auto_drop_disabled": 5,
+      "gold_support_block": 1,
+      "mnli_wrong_consensus_missing_wanli_anchor": 0,
+      "sick_requires_unanimous_consensus": 0
+    },
+    "wrong_consensus_label": {
+      "contradiction": 5,
+      "entailment": 1
+    }
+  },
+  "unchanged_drop": 53,
+  "unchanged_keep": 23146,
+  "v1_1_removed": 53,
+  "v1_removed": 59
+}

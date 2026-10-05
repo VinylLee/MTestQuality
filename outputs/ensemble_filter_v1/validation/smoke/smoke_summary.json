@@ -1,0 +1,233 @@
+{
+  "input_sha256": "b09c393ffe7bb911dd64cb92d366849773f3905c900e7cfeeebc3733b730c6c0",
+  "models": {
+    "model_a": {
+      "manifest": {
+        "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/validation/smoke/model_a",
+        "input_sha256": "b09c393ffe7bb911dd64cb92d366849773f3905c900e7cfeeebc3733b730c6c0",
+        "label_order": [
+          "contradiction",
+          "entailment",
+          "neutral"
+        ],
+        "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+        "model_name": "cross-encoder/nli-deberta-v3-large",
+        "predictions_sha256": "6ae36535dc1e698c7b7603f0354a2bc8b556ee1c35776c5a309574971d036a97",
+        "record_count": 6,
+        "requested_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+        "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+        "runtime": {
+          "at_max_length_count": 0,
+          "batch_size": 128,
+          "device": "cuda:1",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "fp16": true,
+          "max_length": 256,
+          "python_version": "3.9.21",
+          "started_at_utc": "2026-10-04T11:49:10.149309+00:00",
+          "torch_version": "1.12.1+cu113",
+          "transformers_version": "4.29.2"
+        },
+        "summary_sha256": "58a1d54b4e448a9c3c2853973ee921766c129682970abe2addf8d48d3da4e7e8"
+      },
+      "source_health": {
+        "accuracy": 1.0,
+        "by_label": {
+          "contradiction": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "entailment": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          }
+        },
+        "correct": 3,
+        "count": 3,
+        "high_confidence_accuracy": 1.0,
+        "high_confidence_correct": 3,
+        "high_confidence_count": 3,
+        "high_confidence_coverage": 1.0,
+        "high_confidence_threshold": 0.8
+      }
+    },
+    "model_b": {
+      "manifest": {
+        "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/validation/smoke/model_b",
+        "input_sha256": "b09c393ffe7bb911dd64cb92d366849773f3905c900e7cfeeebc3733b730c6c0",
+        "label_order": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "mapping_source": "https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/blob/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json",
+        "model_name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+        "predictions_sha256": "761088aea471faac668aee81fa5e8a9f974d6d4ac11210ef44f4474e14bf211b",
+        "record_count": 6,
+        "requested_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+        "resolved_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+        "runtime": {
+          "at_max_length_count": 0,
+          "batch_size": 64,
+          "device": "cuda:1",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "fp16": true,
+          "max_length": 256,
+          "python_version": "3.9.21",
+          "started_at_utc": "2026-10-04T11:49:20.247556+00:00",
+          "torch_version": "1.12.1+cu113",
+          "transformers_version": "4.29.2"
+        },
+        "summary_sha256": "228d2487d129a0e8799caf01f2da4e3ac7711883e87ea507aaa938306e0aa773"
+      },
+      "source_health": {
+        "accuracy": 1.0,
+        "by_label": {
+          "contradiction": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "entailment": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          }
+        },
+        "correct": 3,
+        "count": 3,
+        "high_confidence_accuracy": 1.0,
+        "high_confidence_correct": 3,
+        "high_confidence_count": 3,
+        "high_confidence_coverage": 1.0,
+        "high_confidence_threshold": 0.8
+      }
+    },
+    "model_c": {
+      "manifest": {
+        "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/validation/smoke/model_c",
+        "input_sha256": "b09c393ffe7bb911dd64cb92d366849773f3905c900e7cfeeebc3733b730c6c0",
+        "label_order": [
+          "contradiction",
+          "entailment",
+          "neutral"
+        ],
+        "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+        "model_name": "alisawuffles/roberta-large-wanli",
+        "predictions_sha256": "4f9818a0695ad841fc21c1b550489483c741a34aa9ea038faeae4fe20242a55b",
+        "record_count": 6,
+        "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+        "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+        "runtime": {
+          "at_max_length_count": 0,
+          "batch_size": 64,
+          "device": "cuda:1",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "fp16": true,
+          "max_length": 256,
+          "python_version": "3.9.21",
+          "started_at_utc": "2026-10-04T11:49:30.307278+00:00",
+          "torch_version": "1.12.1+cu113",
+          "transformers_version": "4.29.2"
+        },
+        "summary_sha256": "fc742732710fd248ed35c6da1cd8cc0b12985a8340fa44c64912512432d39e4c"
+      },
+      "source_health": {
+        "accuracy": 1.0,
+        "by_label": {
+          "contradiction": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "entailment": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          }
+        },
+        "correct": 3,
+        "count": 3,
+        "high_confidence_accuracy": 1.0,
+        "high_confidence_correct": 3,
+        "high_confidence_count": 3,
+        "high_confidence_coverage": 1.0,
+        "high_confidence_threshold": 0.8
+      }
+    },
+    "model_d": {
+      "manifest": {
+        "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/validation/smoke/model_d",
+        "input_sha256": "b09c393ffe7bb911dd64cb92d366849773f3905c900e7cfeeebc3733b730c6c0",
+        "label_order": [
+          "contradiction",
+          "neutral",
+          "entailment"
+        ],
+        "mapping_source": "https://huggingface.co/facebook/bart-large-mnli/blob/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json",
+        "model_name": "facebook/bart-large-mnli",
+        "predictions_sha256": "0e8060961857ae2acd5d2666539e5180caad29da09f3e5fe2951572601c3dc5d",
+        "record_count": 6,
+        "requested_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+        "resolved_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+        "runtime": {
+          "at_max_length_count": 0,
+          "batch_size": 64,
+          "device": "cuda:1",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "fp16": true,
+          "max_length": 256,
+          "python_version": "3.9.21",
+          "started_at_utc": "2026-10-04T11:49:40.232433+00:00",
+          "torch_version": "1.12.1+cu113",
+          "transformers_version": "4.29.2"
+        },
+        "summary_sha256": "4bd7df2f4cf6fa9b190c45136685124f3214a5f9256ea294fc57c2aafcf8c47d"
+      },
+      "source_health": {
+        "accuracy": 1.0,
+        "by_label": {
+          "contradiction": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "entailment": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          },
+          "neutral": {
+            "accuracy": 1.0,
+            "correct": 1,
+            "count": 1
+          }
+        },
+        "correct": 3,
+        "count": 3,
+        "high_confidence_accuracy": 1.0,
+        "high_confidence_correct": 3,
+        "high_confidence_count": 3,
+        "high_confidence_coverage": 1.0,
+        "high_confidence_threshold": 0.8
+      }
+    }
+  }
+}

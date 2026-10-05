@@ -1,0 +1,94 @@
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Loading cross-encoder/nli-deberta-v3-large@bab4bc7178836f731dcfd18c06ca9def0a137712 ...
+/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+NLI inference:   0%|          | 0/1 [00:00<?, ?batch/s]NLI inference: 100%|██████████| 1/1 [00:00<00:00,  1.44batch/s]NLI inference: 100%|██████████| 1/1 [00:00<00:00,  1.44batch/s]
+{
+  "summary": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/smoke/model_a/summary.json",
+  "overall": {
+    "count": 6,
+    "agreed_count": 6,
+    "agreement_rate": 1.0,
+    "mean_confidence": 0.99879851,
+    "median_confidence": 0.99935907,
+    "confidence_percentiles": {
+      "p05": 0.99707317,
+      "p25": 0.99764464,
+      "p50": 0.99935907,
+      "p75": 0.99981223,
+      "p95": 0.99996328
+    },
+    "mean_gold_probability": 0.99879851,
+    "mean_margin": 0.99762948,
+    "mean_normalized_entropy": 0.00793306,
+    "mean_negative_log_likelihood": 0.00120299,
+    "gold_label_counts": {
+      "contradiction": 2,
+      "entailment": 2,
+      "neutral": 2
+    },
+    "predicted_label_counts": {
+      "contradiction": 2,
+      "entailment": 2,
+      "neutral": 2
+    },
+    "confusion_matrix_gold_to_prediction": {
+      "entailment": {
+        "entailment": 2,
+        "neutral": 0,
+        "contradiction": 0
+      },
+      "neutral": {
+        "entailment": 0,
+        "neutral": 2,
+        "contradiction": 0
+      },
+      "contradiction": {
+        "entailment": 0,
+        "neutral": 0,
+        "contradiction": 2
+      }
+    },
+    "confidence_thresholds": {
+      "0.50": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.70": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.80": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.90": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.95": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.99": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      }
+    }
+  }
+}

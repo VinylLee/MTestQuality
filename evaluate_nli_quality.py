@@ -41,6 +41,8 @@ KNOWN_MODEL_LABEL_ORDERS = {
         "entailment",
         "neutral",
     ),
+    "alisawuffles/roberta-large-wanli": ("contradiction", "entailment", "neutral"),
+    "facebook/bart-large-mnli": ("contradiction", "neutral", "entailment"),
 }
 MODEL_TRAINING_DATA_NOTES = {
     "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli": (
@@ -48,9 +50,11 @@ MODEL_TRAINING_DATA_NOTES = {
         "it does not list SNLI."
     ),
     "cross-encoder/nli-deberta-v3-large": (
-        "Model card lists SNLI and MultiNLI. This is intentionally an in-domain "
-        "quality screen for this SNLI-derived dataset."
+        "Model card lists SNLI and MultiNLI. Audit accuracy is a diagnostic "
+        "for filtering, not a model-performance benchmark."
     ),
+    "alisawuffles/roberta-large-wanli": "RoBERTa fine-tuned on WANLI only; consult its model card.",
+    "facebook/bart-large-mnli": "BART fine-tuned on MultiNLI; consult its model card.",
 }
 DEFAULT_MODEL = "cross-encoder/nli-deberta-v3-large"
 CONFIDENCE_THRESHOLDS = (0.50, 0.70, 0.80, 0.90, 0.95, 0.99)
@@ -115,6 +119,8 @@ def load_rows(path: Path) -> List[Dict[str, Any]]:
                 row = json.loads(line)
             except json.JSONDecodeError as exc:
                 raise ValueError(f"Invalid JSON at {path}:{line_number}: {exc}") from exc
+            if not isinstance(row, dict):
+                raise ValueError(f"Expected a JSON object at {path}:{line_number}")
             for field in ("premise", "hypothesis", "label"):
                 if field not in row:
                     raise ValueError(f"Missing {field!r} at {path}:{line_number}")
@@ -403,6 +409,8 @@ def main() -> None:
             with torch.cuda.amp.autocast(enabled=use_fp16):
                 logits = model(**encoded).logits
             probabilities = torch.softmax(logits.float(), dim=-1).cpu()
+            if not torch.isfinite(probabilities).all():
+                raise ValueError(f"Non-finite model probabilities in batch starting at {start}")
             for row, probs, token_count in zip(batch, probabilities.tolist(), token_counts):
                 probability_by_label = {
                     label: float(probs[model_label_order.index(label)])
@@ -440,6 +448,8 @@ def main() -> None:
                     }
                 )
 
+    if sha256_file(input_path) != input_sha256:
+        raise ValueError("Input changed during inference; refusing to publish predictions")
     enriched_rows = []
     for position, (row, check) in enumerate(zip(rows, checks)):
         enriched = dict(row)

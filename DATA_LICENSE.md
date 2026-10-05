@@ -38,7 +38,7 @@ SICK 作者项目页声明使用 Creative Commons Attribution-NonCommercial-Shar
 - 选择并转换为本项目使用的 JSONL 字段结构；
 - 使用 MTrain 的 metamorphic relations 生成 hypothesis 变体；
 - 增加 `idx`、`pair_id`、`mr_id`、`mr_type`、`is_source` 和部分 `component_mrs` 元数据；
-- 已审计的 SNLI 数据另使用预训练 NLI 模型生成预测概率、置信度、一致性、pair 级统计和筛选视图；其余三套尚未进行质量审计。
+- 四套数据均使用固定版本的预训练 NLI 模型生成预测概率、置信度、一致性、pair 级统计和 ensemble 筛选视图；source 保留，删除的增强记录及证据另存到新输出目录。
 
 这些修改与审计结果不代表原始数据集作者或维护者的认可。完整文件哈希和记录数见 `data/README.md`，各数据集的生成配置见对应 `data/<dataset>_v3_3/augmented/*.report.json`。
 

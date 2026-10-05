@@ -1,0 +1,2180 @@
+{
+  "augmentation_vs_source": {
+    "by_mr_id_outcome_counts": {
+      "adding_contradiction": {
+        "source_agrees__augmented_agrees": 786,
+        "source_agrees__augmented_disagrees": 23,
+        "source_disagrees__augmented_agrees": 67,
+        "source_disagrees__augmented_disagrees": 1
+      },
+      "antonym_substitution": {
+        "source_agrees__augmented_agrees": 62,
+        "source_agrees__augmented_disagrees": 3,
+        "source_disagrees__augmented_disagrees": 2
+      },
+      "composite_flip": {
+        "source_agrees__augmented_agrees": 1089,
+        "source_agrees__augmented_disagrees": 27,
+        "source_disagrees__augmented_agrees": 33,
+        "source_disagrees__augmented_disagrees": 28
+      },
+      "composite_inv": {
+        "source_agrees__augmented_agrees": 134,
+        "source_agrees__augmented_disagrees": 4,
+        "source_disagrees__augmented_agrees": 3,
+        "source_disagrees__augmented_disagrees": 4
+      },
+      "composite_neutral": {
+        "source_agrees__augmented_agrees": 918,
+        "source_agrees__augmented_disagrees": 15,
+        "source_disagrees__augmented_agrees": 68,
+        "source_disagrees__augmented_disagrees": 1
+      },
+      "conditional_clause": {
+        "source_agrees__augmented_agrees": 2134,
+        "source_agrees__augmented_disagrees": 161,
+        "source_disagrees__augmented_agrees": 242,
+        "source_disagrees__augmented_disagrees": 9
+      },
+      "negation_flip": {
+        "source_agrees__augmented_agrees": 2056,
+        "source_agrees__augmented_disagrees": 39,
+        "source_disagrees__augmented_agrees": 141,
+        "source_disagrees__augmented_disagrees": 43
+      },
+      "pronoun_substitution": {
+        "source_agrees__augmented_agrees": 1459,
+        "source_agrees__augmented_disagrees": 60,
+        "source_disagrees__augmented_agrees": 16,
+        "source_disagrees__augmented_disagrees": 65
+      },
+      "synonym_replacement": {
+        "source_agrees__augmented_agrees": 162,
+        "source_agrees__augmented_disagrees": 14,
+        "source_disagrees__augmented_agrees": 2,
+        "source_disagrees__augmented_disagrees": 5
+      },
+      "uninformative": {
+        "source_agrees__augmented_agrees": 2883,
+        "source_agrees__augmented_disagrees": 108,
+        "source_disagrees__augmented_agrees": 279,
+        "source_disagrees__augmented_disagrees": 15
+      },
+      "voice_switch": {
+        "source_agrees__augmented_agrees": 203,
+        "source_agrees__augmented_disagrees": 3,
+        "source_disagrees__augmented_agrees": 10,
+        "source_disagrees__augmented_disagrees": 4
+      }
+    },
+    "duplicate_source_pair_count": 0,
+    "interpretation": "Conditions each augmented record on this same model's decision for its source record. source_agrees__augmented_disagrees is a useful transformation-induced mismatch signal, but still is not manually verified ground truth.",
+    "missing_source_count": 0,
+    "when_source_agrees": {
+      "agreed_count": 11886,
+      "agreement_rate": 0.96297497,
+      "confidence_percentiles": {
+        "p05": 0.90330336,
+        "p25": 0.99341371,
+        "p50": 0.998447,
+        "p75": 0.99946785,
+        "p95": 0.99978203
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 11879,
+          "agreement_rate": 0.96357884,
+          "count": 12328,
+          "coverage": 0.99878474
+        },
+        "0.70": {
+          "agreed_count": 11772,
+          "agreement_rate": 0.97008653,
+          "count": 12135,
+          "coverage": 0.98314834
+        },
+        "0.80": {
+          "agreed_count": 11671,
+          "agreement_rate": 0.97282654,
+          "count": 11997,
+          "coverage": 0.97196792
+        },
+        "0.90": {
+          "agreed_count": 11474,
+          "agreement_rate": 0.97750895,
+          "count": 11738,
+          "coverage": 0.95098436
+        },
+        "0.95": {
+          "agreed_count": 11203,
+          "agreement_rate": 0.98168594,
+          "count": 11412,
+          "coverage": 0.92457263
+        },
+        "0.99": {
+          "agreed_count": 9829,
+          "agreement_rate": 0.99032746,
+          "count": 9925,
+          "coverage": 0.80409949
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 4064,
+          "entailment": 39,
+          "neutral": 63
+        },
+        "entailment": {
+          "contradiction": 12,
+          "entailment": 1864,
+          "neutral": 59
+        },
+        "neutral": {
+          "contradiction": 110,
+          "entailment": 174,
+          "neutral": 5958
+        }
+      },
+      "count": 12343,
+      "gold_label_counts": {
+        "contradiction": 4166,
+        "entailment": 1935,
+        "neutral": 6242
+      },
+      "mean_confidence": 0.98133579,
+      "mean_gold_probability": 0.95400273,
+      "mean_margin": 0.9645066,
+      "mean_negative_log_likelihood": 0.13905841,
+      "mean_normalized_entropy": 0.0546629,
+      "median_confidence": 0.998447,
+      "predicted_label_counts": {
+        "contradiction": 4186,
+        "entailment": 2077,
+        "neutral": 6080
+      }
+    },
+    "when_source_disagrees": {
+      "agreed_count": 861,
+      "agreement_rate": 0.82947977,
+      "confidence_percentiles": {
+        "p05": 0.77876932,
+        "p25": 0.98661274,
+        "p50": 0.99719977,
+        "p75": 0.9992055,
+        "p95": 0.99967732
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 860,
+          "agreement_rate": 0.83091787,
+          "count": 1035,
+          "coverage": 0.99710983
+        },
+        "0.70": {
+          "agreed_count": 843,
+          "agreement_rate": 0.843,
+          "count": 1000,
+          "coverage": 0.96339114
+        },
+        "0.80": {
+          "agreed_count": 832,
+          "agreement_rate": 0.85420945,
+          "count": 974,
+          "coverage": 0.93834297
+        },
+        "0.90": {
+          "agreed_count": 816,
+          "agreement_rate": 0.86716259,
+          "count": 941,
+          "coverage": 0.90655106
+        },
+        "0.95": {
+          "agreed_count": 787,
+          "agreement_rate": 0.88626126,
+          "count": 888,
+          "coverage": 0.85549133
+        },
+        "0.99": {
+          "agreed_count": 676,
+          "agreement_rate": 0.91105121,
+          "count": 742,
+          "coverage": 0.71483622
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 241,
+          "entailment": 5,
+          "neutral": 73
+        },
+        "entailment": {
+          "contradiction": 6,
+          "entailment": 31,
+          "neutral": 68
+        },
+        "neutral": {
+          "contradiction": 17,
+          "entailment": 8,
+          "neutral": 589
+        }
+      },
+      "count": 1038,
+      "gold_label_counts": {
+        "contradiction": 319,
+        "entailment": 105,
+        "neutral": 614
+      },
+      "mean_confidence": 0.96614855,
+      "mean_gold_probability": 0.82478688,
+      "mean_margin": 0.93485974,
+      "mean_negative_log_likelihood": 0.73056452,
+      "mean_normalized_entropy": 0.08846067,
+      "median_confidence": 0.99719977,
+      "predicted_label_counts": {
+        "contradiction": 264,
+        "entailment": 44,
+        "neutral": 730
+      }
+    }
+  },
+  "augmented_only": {
+    "agreed_count": 12747,
+    "agreement_rate": 0.95261939,
+    "confidence_percentiles": {
+      "p05": 0.89349061,
+      "p25": 0.99307573,
+      "p50": 0.99837422,
+      "p75": 0.99945706,
+      "p95": 0.99977773
+    },
+    "confidence_thresholds": {
+      "0.50": {
+        "agreed_count": 12739,
+        "agreement_rate": 0.9533039,
+        "count": 13363,
+        "coverage": 0.99865481
+      },
+      "0.70": {
+        "agreed_count": 12615,
+        "agreement_rate": 0.96041112,
+        "count": 13135,
+        "coverage": 0.98161572
+      },
+      "0.80": {
+        "agreed_count": 12503,
+        "agreement_rate": 0.96391951,
+        "count": 12971,
+        "coverage": 0.96935954
+      },
+      "0.90": {
+        "agreed_count": 12290,
+        "agreement_rate": 0.96931935,
+        "count": 12679,
+        "coverage": 0.94753755
+      },
+      "0.95": {
+        "agreed_count": 11990,
+        "agreement_rate": 0.97479675,
+        "count": 12300,
+        "coverage": 0.91921381
+      },
+      "0.99": {
+        "agreed_count": 10505,
+        "agreement_rate": 0.98481297,
+        "count": 10667,
+        "coverage": 0.7971751
+      }
+    },
+    "confusion_matrix_gold_to_prediction": {
+      "contradiction": {
+        "contradiction": 4305,
+        "entailment": 44,
+        "neutral": 136
+      },
+      "entailment": {
+        "contradiction": 18,
+        "entailment": 1895,
+        "neutral": 127
+      },
+      "neutral": {
+        "contradiction": 127,
+        "entailment": 182,
+        "neutral": 6547
+      }
+    },
+    "count": 13381,
+    "gold_label_counts": {
+      "contradiction": 4485,
+      "entailment": 2040,
+      "neutral": 6856
+    },
+    "mean_confidence": 0.98015768,
+    "mean_gold_probability": 0.94397911,
+    "mean_margin": 0.96220681,
+    "mean_negative_log_likelihood": 0.18494312,
+    "mean_normalized_entropy": 0.05728468,
+    "median_confidence": 0.99837422,
+    "predicted_label_counts": {
+      "contradiction": 4450,
+      "entailment": 2121,
+      "neutral": 6810
+    }
+  },
+  "by_is_source": {
+    "false": {
+      "agreed_count": 12747,
+      "agreement_rate": 0.95261939,
+      "confidence_percentiles": {
+        "p05": 0.89349061,
+        "p25": 0.99307573,
+        "p50": 0.99837422,
+        "p75": 0.99945706,
+        "p95": 0.99977773
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 12739,
+          "agreement_rate": 0.9533039,
+          "count": 13363,
+          "coverage": 0.99865481
+        },
+        "0.70": {
+          "agreed_count": 12615,
+          "agreement_rate": 0.96041112,
+          "count": 13135,
+          "coverage": 0.98161572
+        },
+        "0.80": {
+          "agreed_count": 12503,
+          "agreement_rate": 0.96391951,
+          "count": 12971,
+          "coverage": 0.96935954
+        },
+        "0.90": {
+          "agreed_count": 12290,
+          "agreement_rate": 0.96931935,
+          "count": 12679,
+          "coverage": 0.94753755
+        },
+        "0.95": {
+          "agreed_count": 11990,
+          "agreement_rate": 0.97479675,
+          "count": 12300,
+          "coverage": 0.91921381
+        },
+        "0.99": {
+          "agreed_count": 10505,
+          "agreement_rate": 0.98481297,
+          "count": 10667,
+          "coverage": 0.7971751
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 4305,
+          "entailment": 44,
+          "neutral": 136
+        },
+        "entailment": {
+          "contradiction": 18,
+          "entailment": 1895,
+          "neutral": 127
+        },
+        "neutral": {
+          "contradiction": 127,
+          "entailment": 182,
+          "neutral": 6547
+        }
+      },
+      "count": 13381,
+      "gold_label_counts": {
+        "contradiction": 4485,
+        "entailment": 2040,
+        "neutral": 6856
+      },
+      "mean_confidence": 0.98015768,
+      "mean_gold_probability": 0.94397911,
+      "mean_margin": 0.96220681,
+      "mean_negative_log_likelihood": 0.18494312,
+      "mean_normalized_entropy": 0.05728468,
+      "median_confidence": 0.99837422,
+      "predicted_label_counts": {
+        "contradiction": 4450,
+        "entailment": 2121,
+        "neutral": 6810
+      }
+    },
+    "true": {
+      "agreed_count": 8741,
+      "agreement_rate": 0.88975977,
+      "confidence_percentiles": {
+        "p05": 0.80515783,
+        "p25": 0.99016744,
+        "p50": 0.99764829,
+        "p75": 0.99917489,
+        "p95": 0.99968527
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 8740,
+          "agreement_rate": 0.89029235,
+          "count": 9817,
+          "coverage": 0.99928746
+        },
+        "0.70": {
+          "agreed_count": 8598,
+          "agreement_rate": 0.90220357,
+          "count": 9530,
+          "coverage": 0.97007329
+        },
+        "0.80": {
+          "agreed_count": 8493,
+          "agreement_rate": 0.90882825,
+          "count": 9345,
+          "coverage": 0.95124186
+        },
+        "0.90": {
+          "agreed_count": 8300,
+          "agreement_rate": 0.92068774,
+          "count": 9015,
+          "coverage": 0.91765065
+        },
+        "0.95": {
+          "agreed_count": 8086,
+          "agreement_rate": 0.92921168,
+          "count": 8702,
+          "coverage": 0.8857899
+        },
+        "0.99": {
+          "agreed_count": 7061,
+          "agreement_rate": 0.95612729,
+          "count": 7385,
+          "coverage": 0.75173046
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 2790,
+          "entailment": 17,
+          "neutral": 430
+        },
+        "entailment": {
+          "contradiction": 36,
+          "entailment": 3059,
+          "neutral": 273
+        },
+        "neutral": {
+          "contradiction": 102,
+          "entailment": 225,
+          "neutral": 2892
+        }
+      },
+      "count": 9824,
+      "gold_label_counts": {
+        "contradiction": 3237,
+        "entailment": 3368,
+        "neutral": 3219
+      },
+      "mean_confidence": 0.97166039,
+      "mean_gold_probability": 0.88357827,
+      "mean_margin": 0.9447452,
+      "mean_negative_log_likelihood": 0.43367066,
+      "mean_normalized_entropy": 0.07430099,
+      "median_confidence": 0.99764829,
+      "predicted_label_counts": {
+        "contradiction": 2928,
+        "entailment": 3301,
+        "neutral": 3595
+      }
+    }
+  },
+  "by_label": {
+    "0": {
+      "agreed_count": 4954,
+      "agreement_rate": 0.9160503,
+      "confidence_percentiles": {
+        "p05": 0.83980087,
+        "p25": 0.98656264,
+        "p50": 0.99546123,
+        "p75": 0.99812913,
+        "p95": 0.99928341
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 4950,
+          "agreement_rate": 0.91649695,
+          "count": 5401,
+          "coverage": 0.99870562
+        },
+        "0.70": {
+          "agreed_count": 4886,
+          "agreement_rate": 0.92713472,
+          "count": 5270,
+          "coverage": 0.97448225
+        },
+        "0.80": {
+          "agreed_count": 4823,
+          "agreement_rate": 0.93252127,
+          "count": 5172,
+          "coverage": 0.95636095
+        },
+        "0.90": {
+          "agreed_count": 4725,
+          "agreement_rate": 0.9391771,
+          "count": 5031,
+          "coverage": 0.93028846
+        },
+        "0.95": {
+          "agreed_count": 4588,
+          "agreement_rate": 0.9453946,
+          "count": 4853,
+          "coverage": 0.89737426
+        },
+        "0.99": {
+          "agreed_count": 3587,
+          "agreement_rate": 0.95525965,
+          "count": 3755,
+          "coverage": 0.69434172
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 54,
+          "entailment": 4954,
+          "neutral": 400
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 5408,
+      "gold_label_counts": {
+        "entailment": 5408
+      },
+      "mean_confidence": 0.97262641,
+      "mean_gold_probability": 0.90465536,
+      "mean_margin": 0.9474513,
+      "mean_negative_log_likelihood": 0.37715059,
+      "mean_normalized_entropy": 0.07957658,
+      "median_confidence": 0.99546123,
+      "predicted_label_counts": {
+        "contradiction": 54,
+        "entailment": 4954,
+        "neutral": 400
+      }
+    },
+    "1": {
+      "agreed_count": 9439,
+      "agreement_rate": 0.93687345,
+      "confidence_percentiles": {
+        "p05": 0.85303751,
+        "p25": 0.99230775,
+        "p50": 0.99836391,
+        "p75": 0.99936879,
+        "p95": 0.99968572
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 9437,
+          "agreement_rate": 0.93741929,
+          "count": 10067,
+          "coverage": 0.99920596
+        },
+        "0.70": {
+          "agreed_count": 9308,
+          "agreement_rate": 0.94555059,
+          "count": 9844,
+          "coverage": 0.97707196
+        },
+        "0.80": {
+          "agreed_count": 9210,
+          "agreement_rate": 0.94987624,
+          "count": 9696,
+          "coverage": 0.96238213
+        },
+        "0.90": {
+          "agreed_count": 9015,
+          "agreement_rate": 0.95731125,
+          "count": 9417,
+          "coverage": 0.93468983
+        },
+        "0.95": {
+          "agreed_count": 8751,
+          "agreement_rate": 0.96270627,
+          "count": 9090,
+          "coverage": 0.90223325
+        },
+        "0.99": {
+          "agreed_count": 7717,
+          "agreement_rate": 0.98155686,
+          "count": 7862,
+          "coverage": 0.78034739
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 229,
+          "entailment": 407,
+          "neutral": 9439
+        }
+      },
+      "count": 10075,
+      "gold_label_counts": {
+        "neutral": 10075
+      },
+      "mean_confidence": 0.97664199,
+      "mean_gold_probability": 0.92801257,
+      "mean_margin": 0.95487491,
+      "mean_negative_log_likelihood": 0.22719655,
+      "mean_normalized_entropy": 0.06400265,
+      "median_confidence": 0.99836391,
+      "predicted_label_counts": {
+        "contradiction": 229,
+        "entailment": 407,
+        "neutral": 9439
+      }
+    },
+    "2": {
+      "agreed_count": 7095,
+      "agreement_rate": 0.91880342,
+      "confidence_percentiles": {
+        "p05": 0.87060674,
+        "p25": 0.99561037,
+        "p50": 0.99899048,
+        "p75": 0.99961722,
+        "p95": 0.99981396
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 7092,
+          "agreement_rate": 0.91960581,
+          "count": 7712,
+          "coverage": 0.998705
+        },
+        "0.70": {
+          "agreed_count": 7019,
+          "agreement_rate": 0.92954576,
+          "count": 7551,
+          "coverage": 0.97785548
+        },
+        "0.80": {
+          "agreed_count": 6963,
+          "agreement_rate": 0.93488185,
+          "count": 7448,
+          "coverage": 0.96451696
+        },
+        "0.90": {
+          "agreed_count": 6850,
+          "agreement_rate": 0.94534916,
+          "count": 7246,
+          "coverage": 0.93835794
+        },
+        "0.95": {
+          "agreed_count": 6737,
+          "agreement_rate": 0.95438447,
+          "count": 7059,
+          "coverage": 0.91414141
+        },
+        "0.99": {
+          "agreed_count": 6262,
+          "agreement_rate": 0.97311577,
+          "count": 6435,
+          "coverage": 0.83333333
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 7095,
+          "entailment": 61,
+          "neutral": 566
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 7722,
+      "gold_label_counts": {
+        "contradiction": 7722
+      },
+      "mean_confidence": 0.97920873,
+      "mean_gold_probability": 0.91550823,
+      "mean_margin": 0.95989184,
+      "mean_negative_log_likelihood": 0.31163804,
+      "mean_normalized_entropy": 0.05455612,
+      "median_confidence": 0.99899048,
+      "predicted_label_counts": {
+        "contradiction": 7095,
+        "entailment": 61,
+        "neutral": 566
+      }
+    }
+  },
+  "by_mr_id": {
+    "adding_contradiction": {
+      "agreed_count": 853,
+      "agreement_rate": 0.97263398,
+      "confidence_percentiles": {
+        "p05": 0.94547485,
+        "p25": 0.99482381,
+        "p50": 0.99789965,
+        "p75": 0.99921882,
+        "p95": 0.99973487
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 853,
+          "agreement_rate": 0.97485714,
+          "count": 875,
+          "coverage": 0.9977195
+        },
+        "0.70": {
+          "agreed_count": 849,
+          "agreement_rate": 0.9781106,
+          "count": 868,
+          "coverage": 0.98973774
+        },
+        "0.80": {
+          "agreed_count": 844,
+          "agreement_rate": 0.97911833,
+          "count": 862,
+          "coverage": 0.98289624
+        },
+        "0.90": {
+          "agreed_count": 835,
+          "agreement_rate": 0.98351001,
+          "count": 849,
+          "coverage": 0.96807298
+        },
+        "0.95": {
+          "agreed_count": 819,
+          "agreement_rate": 0.98674699,
+          "count": 830,
+          "coverage": 0.94640821
+        },
+        "0.99": {
+          "agreed_count": 740,
+          "agreement_rate": 0.9919571,
+          "count": 746,
+          "coverage": 0.85062714
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 853,
+          "entailment": 11,
+          "neutral": 13
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 877,
+      "gold_label_counts": {
+        "contradiction": 877
+      },
+      "mean_confidence": 0.98627683,
+      "mean_gold_probability": 0.9651806,
+      "mean_margin": 0.97510989,
+      "mean_negative_log_likelihood": 0.12886954,
+      "mean_normalized_entropy": 0.04599096,
+      "median_confidence": 0.99789965,
+      "predicted_label_counts": {
+        "contradiction": 853,
+        "entailment": 11,
+        "neutral": 13
+      }
+    },
+    "antonym_substitution": {
+      "agreed_count": 62,
+      "agreement_rate": 0.92537313,
+      "confidence_percentiles": {
+        "p05": 0.91367116,
+        "p25": 0.99508306,
+        "p50": 0.99908817,
+        "p75": 0.99952281,
+        "p95": 0.99972133
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 62,
+          "agreement_rate": 0.92537313,
+          "count": 67,
+          "coverage": 1.0
+        },
+        "0.70": {
+          "agreed_count": 62,
+          "agreement_rate": 0.93939394,
+          "count": 66,
+          "coverage": 0.98507463
+        },
+        "0.80": {
+          "agreed_count": 61,
+          "agreement_rate": 0.953125,
+          "count": 64,
+          "coverage": 0.95522388
+        },
+        "0.90": {
+          "agreed_count": 61,
+          "agreement_rate": 0.953125,
+          "count": 64,
+          "coverage": 0.95522388
+        },
+        "0.95": {
+          "agreed_count": 59,
+          "agreement_rate": 0.96721311,
+          "count": 61,
+          "coverage": 0.91044776
+        },
+        "0.99": {
+          "agreed_count": 58,
+          "agreement_rate": 0.98305085,
+          "count": 59,
+          "coverage": 0.88059701
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 62,
+          "entailment": 1,
+          "neutral": 4
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 67,
+      "gold_label_counts": {
+        "contradiction": 67
+      },
+      "mean_confidence": 0.98208138,
+      "mean_gold_probability": 0.9249374,
+      "mean_margin": 0.96562492,
+      "mean_negative_log_likelihood": 0.25993662,
+      "mean_normalized_entropy": 0.05142983,
+      "median_confidence": 0.99908817,
+      "predicted_label_counts": {
+        "contradiction": 62,
+        "entailment": 1,
+        "neutral": 4
+      }
+    },
+    "composite_flip": {
+      "agreed_count": 1122,
+      "agreement_rate": 0.95327103,
+      "confidence_percentiles": {
+        "p05": 0.93779247,
+        "p25": 0.99727505,
+        "p50": 0.99922109,
+        "p75": 0.99965119,
+        "p95": 0.99981834
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 1120,
+          "agreement_rate": 0.95400341,
+          "count": 1174,
+          "coverage": 0.99745115
+        },
+        "0.70": {
+          "agreed_count": 1116,
+          "agreement_rate": 0.96289905,
+          "count": 1159,
+          "coverage": 0.98470688
+        },
+        "0.80": {
+          "agreed_count": 1110,
+          "agreement_rate": 0.96689895,
+          "count": 1148,
+          "coverage": 0.97536109
+        },
+        "0.90": {
+          "agreed_count": 1096,
+          "agreement_rate": 0.97249335,
+          "count": 1127,
+          "coverage": 0.95751912
+        },
+        "0.95": {
+          "agreed_count": 1084,
+          "agreement_rate": 0.9801085,
+          "count": 1106,
+          "coverage": 0.93967715
+        },
+        "0.99": {
+          "agreed_count": 1032,
+          "agreement_rate": 0.9894535,
+          "count": 1043,
+          "coverage": 0.88615123
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 1122,
+          "entailment": 7,
+          "neutral": 48
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 1177,
+      "gold_label_counts": {
+        "contradiction": 1177
+      },
+      "mean_confidence": 0.98572402,
+      "mean_gold_probability": 0.95122263,
+      "mean_margin": 0.97332744,
+      "mean_negative_log_likelihood": 0.16830895,
+      "mean_normalized_entropy": 0.04076209,
+      "median_confidence": 0.99922109,
+      "predicted_label_counts": {
+        "contradiction": 1122,
+        "entailment": 7,
+        "neutral": 48
+      }
+    },
+    "composite_inv": {
+      "agreed_count": 137,
+      "agreement_rate": 0.94482759,
+      "confidence_percentiles": {
+        "p05": 0.85552151,
+        "p25": 0.97968161,
+        "p50": 0.99261427,
+        "p75": 0.99827266,
+        "p95": 0.99936625
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 136,
+          "agreement_rate": 0.94444444,
+          "count": 144,
+          "coverage": 0.99310345
+        },
+        "0.70": {
+          "agreed_count": 133,
+          "agreement_rate": 0.95,
+          "count": 140,
+          "coverage": 0.96551724
+        },
+        "0.80": {
+          "agreed_count": 131,
+          "agreement_rate": 0.94927536,
+          "count": 138,
+          "coverage": 0.95172414
+        },
+        "0.90": {
+          "agreed_count": 129,
+          "agreement_rate": 0.95555556,
+          "count": 135,
+          "coverage": 0.93103448
+        },
+        "0.95": {
+          "agreed_count": 126,
+          "agreement_rate": 0.95454545,
+          "count": 132,
+          "coverage": 0.91034483
+        },
+        "0.99": {
+          "agreed_count": 79,
+          "agreement_rate": 0.96341463,
+          "count": 82,
+          "coverage": 0.56551724
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 1,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 1,
+          "entailment": 136,
+          "neutral": 7
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 145,
+      "gold_label_counts": {
+        "contradiction": 1,
+        "entailment": 144
+      },
+      "mean_confidence": 0.96853938,
+      "mean_gold_probability": 0.91903627,
+      "mean_margin": 0.9393726,
+      "mean_negative_log_likelihood": 0.30923913,
+      "mean_normalized_entropy": 0.09069621,
+      "median_confidence": 0.99261427,
+      "predicted_label_counts": {
+        "contradiction": 2,
+        "entailment": 136,
+        "neutral": 7
+      }
+    },
+    "composite_neutral": {
+      "agreed_count": 986,
+      "agreement_rate": 0.98403194,
+      "confidence_percentiles": {
+        "p05": 0.98163263,
+        "p25": 0.99840663,
+        "p50": 0.99930895,
+        "p75": 0.999569,
+        "p95": 0.99973069
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 986,
+          "agreement_rate": 0.98501499,
+          "count": 1001,
+          "coverage": 0.999002
+        },
+        "0.70": {
+          "agreed_count": 982,
+          "agreement_rate": 0.98594378,
+          "count": 996,
+          "coverage": 0.99401198
+        },
+        "0.80": {
+          "agreed_count": 975,
+          "agreement_rate": 0.98584429,
+          "count": 989,
+          "coverage": 0.98702595
+        },
+        "0.90": {
+          "agreed_count": 968,
+          "agreement_rate": 0.9877551,
+          "count": 980,
+          "coverage": 0.97804391
+        },
+        "0.95": {
+          "agreed_count": 960,
+          "agreement_rate": 0.99071207,
+          "count": 969,
+          "coverage": 0.96706587
+        },
+        "0.99": {
+          "agreed_count": 926,
+          "agreement_rate": 0.99356223,
+          "count": 932,
+          "coverage": 0.93013972
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 7,
+          "entailment": 9,
+          "neutral": 986
+        }
+      },
+      "count": 1002,
+      "gold_label_counts": {
+        "neutral": 1002
+      },
+      "mean_confidence": 0.99183263,
+      "mean_gold_probability": 0.97840329,
+      "mean_margin": 0.98426194,
+      "mean_negative_log_likelihood": 0.0675546,
+      "mean_normalized_entropy": 0.02571789,
+      "median_confidence": 0.99930895,
+      "predicted_label_counts": {
+        "contradiction": 7,
+        "entailment": 9,
+        "neutral": 986
+      }
+    },
+    "conditional_clause": {
+      "agreed_count": 2376,
+      "agreement_rate": 0.93322859,
+      "confidence_percentiles": {
+        "p05": 0.73413659,
+        "p25": 0.96872714,
+        "p50": 0.99206025,
+        "p75": 0.99679011,
+        "p95": 0.99882015
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 2374,
+          "agreement_rate": 0.9331761,
+          "count": 2544,
+          "coverage": 0.99921445
+        },
+        "0.70": {
+          "agreed_count": 2314,
+          "agreement_rate": 0.94836066,
+          "count": 2440,
+          "coverage": 0.95836606
+        },
+        "0.80": {
+          "agreed_count": 2271,
+          "agreement_rate": 0.95460277,
+          "count": 2379,
+          "coverage": 0.93440691
+        },
+        "0.90": {
+          "agreed_count": 2165,
+          "agreement_rate": 0.96393589,
+          "count": 2246,
+          "coverage": 0.88216811
+        },
+        "0.95": {
+          "agreed_count": 1998,
+          "agreement_rate": 0.97131745,
+          "count": 2057,
+          "coverage": 0.80793401
+        },
+        "0.99": {
+          "agreed_count": 1389,
+          "agreement_rate": 0.98931624,
+          "count": 1404,
+          "coverage": 0.55145326
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 61,
+          "entailment": 109,
+          "neutral": 2376
+        }
+      },
+      "count": 2546,
+      "gold_label_counts": {
+        "neutral": 2546
+      },
+      "mean_confidence": 0.956876,
+      "mean_gold_probability": 0.91215572,
+      "mean_margin": 0.91746774,
+      "mean_negative_log_likelihood": 0.20948,
+      "mean_normalized_entropy": 0.12005934,
+      "median_confidence": 0.99206025,
+      "predicted_label_counts": {
+        "contradiction": 61,
+        "entailment": 109,
+        "neutral": 2376
+      }
+    },
+    "negation_flip": {
+      "agreed_count": 2197,
+      "agreement_rate": 0.96401931,
+      "confidence_percentiles": {
+        "p05": 0.97639372,
+        "p25": 0.99848378,
+        "p50": 0.99950147,
+        "p75": 0.99974912,
+        "p95": 0.99983861
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 2196,
+          "agreement_rate": 0.96569921,
+          "count": 2274,
+          "coverage": 0.99780606
+        },
+        "0.70": {
+          "agreed_count": 2186,
+          "agreement_rate": 0.96854231,
+          "count": 2257,
+          "coverage": 0.99034664
+        },
+        "0.80": {
+          "agreed_count": 2181,
+          "agreement_rate": 0.97105966,
+          "count": 2246,
+          "coverage": 0.98551996
+        },
+        "0.90": {
+          "agreed_count": 2170,
+          "agreement_rate": 0.97703737,
+          "count": 2221,
+          "coverage": 0.97455024
+        },
+        "0.95": {
+          "agreed_count": 2160,
+          "agreement_rate": 0.98315885,
+          "count": 2197,
+          "coverage": 0.96401931
+        },
+        "0.99": {
+          "agreed_count": 2081,
+          "agreement_rate": 0.99142449,
+          "count": 2099,
+          "coverage": 0.92101799
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 2197,
+          "entailment": 18,
+          "neutral": 64
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 2279,
+      "gold_label_counts": {
+        "contradiction": 2279
+      },
+      "mean_confidence": 0.99055567,
+      "mean_gold_probability": 0.96203732,
+      "mean_margin": 0.98270613,
+      "mean_negative_log_likelihood": 0.13980669,
+      "mean_normalized_entropy": 0.02828889,
+      "median_confidence": 0.99950147,
+      "predicted_label_counts": {
+        "contradiction": 2197,
+        "entailment": 18,
+        "neutral": 64
+      }
+    },
+    "none": {
+      "agreed_count": 8741,
+      "agreement_rate": 0.88975977,
+      "confidence_percentiles": {
+        "p05": 0.80515783,
+        "p25": 0.99016744,
+        "p50": 0.99764829,
+        "p75": 0.99917489,
+        "p95": 0.99968527
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 8740,
+          "agreement_rate": 0.89029235,
+          "count": 9817,
+          "coverage": 0.99928746
+        },
+        "0.70": {
+          "agreed_count": 8598,
+          "agreement_rate": 0.90220357,
+          "count": 9530,
+          "coverage": 0.97007329
+        },
+        "0.80": {
+          "agreed_count": 8493,
+          "agreement_rate": 0.90882825,
+          "count": 9345,
+          "coverage": 0.95124186
+        },
+        "0.90": {
+          "agreed_count": 8300,
+          "agreement_rate": 0.92068774,
+          "count": 9015,
+          "coverage": 0.91765065
+        },
+        "0.95": {
+          "agreed_count": 8086,
+          "agreement_rate": 0.92921168,
+          "count": 8702,
+          "coverage": 0.8857899
+        },
+        "0.99": {
+          "agreed_count": 7061,
+          "agreement_rate": 0.95612729,
+          "count": 7385,
+          "coverage": 0.75173046
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 2790,
+          "entailment": 17,
+          "neutral": 430
+        },
+        "entailment": {
+          "contradiction": 36,
+          "entailment": 3059,
+          "neutral": 273
+        },
+        "neutral": {
+          "contradiction": 102,
+          "entailment": 225,
+          "neutral": 2892
+        }
+      },
+      "count": 9824,
+      "gold_label_counts": {
+        "contradiction": 3237,
+        "entailment": 3368,
+        "neutral": 3219
+      },
+      "mean_confidence": 0.97166039,
+      "mean_gold_probability": 0.88357827,
+      "mean_margin": 0.9447452,
+      "mean_negative_log_likelihood": 0.43367066,
+      "mean_normalized_entropy": 0.07430099,
+      "median_confidence": 0.99764829,
+      "predicted_label_counts": {
+        "contradiction": 2928,
+        "entailment": 3301,
+        "neutral": 3595
+      }
+    },
+    "pronoun_substitution": {
+      "agreed_count": 1475,
+      "agreement_rate": 0.921875,
+      "confidence_percentiles": {
+        "p05": 0.79002738,
+        "p25": 0.98076376,
+        "p50": 0.99319444,
+        "p75": 0.99718365,
+        "p95": 0.99912677
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 1473,
+          "agreement_rate": 0.92235441,
+          "count": 1597,
+          "coverage": 0.998125
+        },
+        "0.70": {
+          "agreed_count": 1452,
+          "agreement_rate": 0.93496458,
+          "count": 1553,
+          "coverage": 0.970625
+        },
+        "0.80": {
+          "agreed_count": 1425,
+          "agreement_rate": 0.94121532,
+          "count": 1514,
+          "coverage": 0.94625
+        },
+        "0.90": {
+          "agreed_count": 1381,
+          "agreement_rate": 0.94914089,
+          "count": 1455,
+          "coverage": 0.909375
+        },
+        "0.95": {
+          "agreed_count": 1328,
+          "agreement_rate": 0.95677233,
+          "count": 1388,
+          "coverage": 0.8675
+        },
+        "0.99": {
+          "agreed_count": 929,
+          "agreement_rate": 0.95872033,
+          "count": 969,
+          "coverage": 0.605625
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 42,
+          "entailment": 0,
+          "neutral": 1
+        },
+        "entailment": {
+          "contradiction": 14,
+          "entailment": 1412,
+          "neutral": 110
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 21
+        }
+      },
+      "count": 1600,
+      "gold_label_counts": {
+        "contradiction": 43,
+        "entailment": 1536,
+        "neutral": 21
+      },
+      "mean_confidence": 0.96574986,
+      "mean_gold_probability": 0.9068189,
+      "mean_margin": 0.93401051,
+      "mean_negative_log_likelihood": 0.32244829,
+      "mean_normalized_entropy": 0.09719953,
+      "median_confidence": 0.99319444,
+      "predicted_label_counts": {
+        "contradiction": 56,
+        "entailment": 1412,
+        "neutral": 132
+      }
+    },
+    "synonym_replacement": {
+      "agreed_count": 164,
+      "agreement_rate": 0.89617486,
+      "confidence_percentiles": {
+        "p05": 0.94373231,
+        "p25": 0.98950657,
+        "p50": 0.99646497,
+        "p75": 0.99875962,
+        "p95": 0.99974317
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 164,
+          "agreement_rate": 0.89617486,
+          "count": 183,
+          "coverage": 1.0
+        },
+        "0.70": {
+          "agreed_count": 164,
+          "agreement_rate": 0.9010989,
+          "count": 182,
+          "coverage": 0.99453552
+        },
+        "0.80": {
+          "agreed_count": 162,
+          "agreement_rate": 0.9,
+          "count": 180,
+          "coverage": 0.98360656
+        },
+        "0.90": {
+          "agreed_count": 162,
+          "agreement_rate": 0.91011236,
+          "count": 178,
+          "coverage": 0.9726776
+        },
+        "0.95": {
+          "agreed_count": 158,
+          "agreement_rate": 0.91860465,
+          "count": 172,
+          "coverage": 0.93989071
+        },
+        "0.99": {
+          "agreed_count": 126,
+          "agreement_rate": 0.93333333,
+          "count": 135,
+          "coverage": 0.73770492
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 24,
+          "entailment": 7,
+          "neutral": 6
+        },
+        "entailment": {
+          "contradiction": 2,
+          "entailment": 138,
+          "neutral": 4
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 2
+        }
+      },
+      "count": 183,
+      "gold_label_counts": {
+        "contradiction": 37,
+        "entailment": 144,
+        "neutral": 2
+      },
+      "mean_confidence": 0.98446315,
+      "mean_gold_probability": 0.89041526,
+      "mean_margin": 0.97077591,
+      "mean_negative_log_likelihood": 0.55249305,
+      "mean_normalized_entropy": 0.05593673,
+      "median_confidence": 0.99646497,
+      "predicted_label_counts": {
+        "contradiction": 26,
+        "entailment": 145,
+        "neutral": 12
+      }
+    },
+    "uninformative": {
+      "agreed_count": 3162,
+      "agreement_rate": 0.96255708,
+      "confidence_percentiles": {
+        "p05": 0.97688659,
+        "p25": 0.99811327,
+        "p50": 0.99918193,
+        "p75": 0.99953067,
+        "p95": 0.99972312
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 3162,
+          "agreement_rate": 0.96285018,
+          "count": 3284,
+          "coverage": 0.99969559
+        },
+        "0.70": {
+          "agreed_count": 3146,
+          "agreement_rate": 0.96591956,
+          "count": 3257,
+          "coverage": 0.99147641
+        },
+        "0.80": {
+          "agreed_count": 3132,
+          "agreement_rate": 0.96846011,
+          "count": 3234,
+          "coverage": 0.98447489
+        },
+        "0.90": {
+          "agreed_count": 3113,
+          "agreement_rate": 0.97038653,
+          "count": 3208,
+          "coverage": 0.97656012
+        },
+        "0.95": {
+          "agreed_count": 3089,
+          "agreement_rate": 0.97352663,
+          "count": 3173,
+          "coverage": 0.96590563
+        },
+        "0.99": {
+          "agreed_count": 2951,
+          "agreement_rate": 0.98366667,
+          "count": 3000,
+          "coverage": 0.91324201
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 59,
+          "entailment": 64,
+          "neutral": 3162
+        }
+      },
+      "count": 3285,
+      "gold_label_counts": {
+        "neutral": 3285
+      },
+      "mean_confidence": 0.99039224,
+      "mean_gold_probability": 0.9587836,
+      "mean_margin": 0.9813349,
+      "mean_negative_log_likelihood": 0.1602141,
+      "mean_normalized_entropy": 0.02827302,
+      "median_confidence": 0.99918193,
+      "predicted_label_counts": {
+        "contradiction": 59,
+        "entailment": 64,
+        "neutral": 3162
+      }
+    },
+    "voice_switch": {
+      "agreed_count": 213,
+      "agreement_rate": 0.96818182,
+      "confidence_percentiles": {
+        "p05": 0.97694528,
+        "p25": 0.99736408,
+        "p50": 0.9987585,
+        "p75": 0.9992835,
+        "p95": 0.99963418
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 213,
+          "agreement_rate": 0.96818182,
+          "count": 220,
+          "coverage": 1.0
+        },
+        "0.70": {
+          "agreed_count": 211,
+          "agreement_rate": 0.97235023,
+          "count": 217,
+          "coverage": 0.98636364
+        },
+        "0.80": {
+          "agreed_count": 211,
+          "agreement_rate": 0.97235023,
+          "count": 217,
+          "coverage": 0.98636364
+        },
+        "0.90": {
+          "agreed_count": 210,
+          "agreement_rate": 0.97222222,
+          "count": 216,
+          "coverage": 0.98181818
+        },
+        "0.95": {
+          "agreed_count": 209,
+          "agreement_rate": 0.97209302,
+          "count": 215,
+          "coverage": 0.97727273
+        },
+        "0.99": {
+          "agreed_count": 194,
+          "agreement_rate": 0.97979798,
+          "count": 198,
+          "coverage": 0.9
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 4,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 1,
+          "entailment": 209,
+          "neutral": 6
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 220,
+      "gold_label_counts": {
+        "contradiction": 4,
+        "entailment": 216
+      },
+      "mean_confidence": 0.98998309,
+      "mean_gold_probability": 0.96113205,
+      "mean_margin": 0.98255038,
+      "mean_negative_log_likelihood": 0.1744465,
+      "mean_normalized_entropy": 0.03215972,
+      "median_confidence": 0.9987585,
+      "predicted_label_counts": {
+        "contradiction": 5,
+        "entailment": 209,
+        "neutral": 6
+      }
+    }
+  },
+  "by_mr_type": {
+    "flip": {
+      "agreed_count": 4234,
+      "agreement_rate": 0.96227273,
+      "confidence_percentiles": {
+        "p05": 0.95809975,
+        "p25": 0.99737772,
+        "p50": 0.99924707,
+        "p75": 0.99968746,
+        "p95": 0.99982763
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 4231,
+          "agreement_rate": 0.96378132,
+          "count": 4390,
+          "coverage": 0.99772727
+        },
+        "0.70": {
+          "agreed_count": 4213,
+          "agreement_rate": 0.96850575,
+          "count": 4350,
+          "coverage": 0.98863636
+        },
+        "0.80": {
+          "agreed_count": 4196,
+          "agreement_rate": 0.9712963,
+          "count": 4320,
+          "coverage": 0.98181818
+        },
+        "0.90": {
+          "agreed_count": 4162,
+          "agreement_rate": 0.97676602,
+          "count": 4261,
+          "coverage": 0.96840909
+        },
+        "0.95": {
+          "agreed_count": 4122,
+          "agreement_rate": 0.98283262,
+          "count": 4194,
+          "coverage": 0.95318182
+        },
+        "0.99": {
+          "agreed_count": 3911,
+          "agreement_rate": 0.99087915,
+          "count": 3947,
+          "coverage": 0.89704545
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 4234,
+          "entailment": 37,
+          "neutral": 129
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        }
+      },
+      "count": 4400,
+      "gold_label_counts": {
+        "contradiction": 4400
+      },
+      "mean_confidence": 0.98828131,
+      "mean_gold_probability": 0.95920597,
+      "mean_margin": 0.97842316,
+      "mean_negative_log_likelihood": 0.14708032,
+      "mean_normalized_entropy": 0.03550619,
+      "median_confidence": 0.99924707,
+      "predicted_label_counts": {
+        "contradiction": 4234,
+        "entailment": 37,
+        "neutral": 129
+      }
+    },
+    "inv": {
+      "agreed_count": 10730,
+      "agreement_rate": 0.89625794,
+      "confidence_percentiles": {
+        "p05": 0.80629522,
+        "p25": 0.98853093,
+        "p50": 0.99718762,
+        "p75": 0.99906015,
+        "p95": 0.99967027
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 10726,
+          "agreement_rate": 0.89674776,
+          "count": 11961,
+          "coverage": 0.99908119
+        },
+        "0.70": {
+          "agreed_count": 10558,
+          "agreement_rate": 0.90844949,
+          "count": 11622,
+          "coverage": 0.97076512
+        },
+        "0.80": {
+          "agreed_count": 10422,
+          "agreement_rate": 0.91469194,
+          "count": 11394,
+          "coverage": 0.95172068
+        },
+        "0.90": {
+          "agreed_count": 10182,
+          "agreement_rate": 0.92572052,
+          "count": 10999,
+          "coverage": 0.91872703
+        },
+        "0.95": {
+          "agreed_count": 9907,
+          "agreement_rate": 0.93382977,
+          "count": 10609,
+          "coverage": 0.88615102
+        },
+        "0.99": {
+          "agreed_count": 8389,
+          "agreement_rate": 0.95666553,
+          "count": 8769,
+          "coverage": 0.73245907
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 2861,
+          "entailment": 24,
+          "neutral": 437
+        },
+        "entailment": {
+          "contradiction": 54,
+          "entailment": 4954,
+          "neutral": 400
+        },
+        "neutral": {
+          "contradiction": 102,
+          "entailment": 225,
+          "neutral": 2915
+        }
+      },
+      "count": 11972,
+      "gold_label_counts": {
+        "contradiction": 3322,
+        "entailment": 5408,
+        "neutral": 3242
+      },
+      "mean_confidence": 0.97136507,
+      "mean_gold_probability": 0.88864337,
+      "mean_margin": 0.9443381,
+      "mean_negative_log_likelihood": 0.41435199,
+      "mean_normalized_entropy": 0.07650473,
+      "median_confidence": 0.99718762,
+      "predicted_label_counts": {
+        "contradiction": 3017,
+        "entailment": 5203,
+        "neutral": 3752
+      }
+    },
+    "neutral": {
+      "agreed_count": 6524,
+      "agreement_rate": 0.95477828,
+      "confidence_percentiles": {
+        "p05": 0.87385932,
+        "p25": 0.99219161,
+        "p50": 0.99827707,
+        "p75": 0.99938345,
+        "p95": 0.9996908
+      },
+      "confidence_thresholds": {
+        "0.50": {
+          "agreed_count": 6522,
+          "agreement_rate": 0.95504466,
+          "count": 6829,
+          "coverage": 0.99941461
+        },
+        "0.70": {
+          "agreed_count": 6442,
+          "agreement_rate": 0.96249813,
+          "count": 6693,
+          "coverage": 0.9795112
+        },
+        "0.80": {
+          "agreed_count": 6378,
+          "agreement_rate": 0.96607089,
+          "count": 6602,
+          "coverage": 0.96619347
+        },
+        "0.90": {
+          "agreed_count": 6246,
+          "agreement_rate": 0.97078023,
+          "count": 6434,
+          "coverage": 0.94160691
+        },
+        "0.95": {
+          "agreed_count": 6047,
+          "agreement_rate": 0.97547992,
+          "count": 6199,
+          "coverage": 0.90721499
+        },
+        "0.99": {
+          "agreed_count": 5266,
+          "agreement_rate": 0.98688156,
+          "count": 5336,
+          "coverage": 0.78091614
+        }
+      },
+      "confusion_matrix_gold_to_prediction": {
+        "contradiction": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "entailment": {
+          "contradiction": 0,
+          "entailment": 0,
+          "neutral": 0
+        },
+        "neutral": {
+          "contradiction": 127,
+          "entailment": 182,
+          "neutral": 6524
+        }
+      },
+      "count": 6833,
+      "gold_label_counts": {
+        "neutral": 6833
+      },
+      "mean_confidence": 0.97811519,
+      "mean_gold_probability": 0.94428694,
+      "mean_margin": 0.957967,
+      "mean_negative_log_likelihood": 0.16498304,
+      "mean_normalized_entropy": 0.06209824,
+      "median_confidence": 0.99827707,
+      "predicted_label_counts": {
+        "contradiction": 127,
+        "entailment": 182,
+        "neutral": 6524
+      }
+    }
+  },
+  "created_at_utc": "2026-10-04T11:50:38.036016+00:00",
+  "elapsed_seconds": 42.195,
+  "input": {
+    "path": "/home/ubuntu/MTestQuality/data/snli_v3_3/augmented/snli.jsonl",
+    "record_count": 23205,
+    "sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53"
+  },
+  "interpretation_warning": "Agreement is agreement with one pretrained model, not verified ground truth. Softmax confidence can be miscalibrated, especially under distribution shift.",
+  "model": {
+    "model_logit_label_order": [
+      "entailment",
+      "neutral",
+      "contradiction"
+    ],
+    "name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "parameter_count": 435064835,
+    "requested_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "resolved_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "training_data_note": "Model card lists MNLI, FEVER-NLI, ANLI, LingNLI, and WANLI; it does not list SNLI."
+  },
+  "outputs": {
+    "disagreements": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_b/disagreements.jsonl",
+    "high_confidence_agreements": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_b/high_confidence_agreements.jsonl",
+    "pair_quality": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_b/pair_quality.jsonl",
+    "predictions": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_b/predictions.jsonl"
+  },
+  "overall": {
+    "agreed_count": 21488,
+    "agreement_rate": 0.92600733,
+    "confidence_percentiles": {
+      "p05": 0.85393345,
+      "p25": 0.99198216,
+      "p50": 0.99808806,
+      "p75": 0.99935776,
+      "p95": 0.99974948
+    },
+    "confidence_thresholds": {
+      "0.50": {
+        "agreed_count": 21479,
+        "agreement_rate": 0.92661777,
+        "count": 23180,
+        "coverage": 0.99892265
+      },
+      "0.70": {
+        "agreed_count": 21213,
+        "agreement_rate": 0.93593647,
+        "count": 22665,
+        "coverage": 0.97672915
+      },
+      "0.80": {
+        "agreed_count": 20996,
+        "agreement_rate": 0.94084961,
+        "count": 22316,
+        "coverage": 0.96168929
+      },
+      "0.90": {
+        "agreed_count": 20590,
+        "agreement_rate": 0.94911035,
+        "count": 21694,
+        "coverage": 0.93488472
+      },
+      "0.95": {
+        "agreed_count": 20076,
+        "agreement_rate": 0.95590896,
+        "count": 21002,
+        "coverage": 0.90506356
+      },
+      "0.99": {
+        "agreed_count": 17566,
+        "agreement_rate": 0.97307778,
+        "count": 18052,
+        "coverage": 0.77793579
+      }
+    },
+    "confusion_matrix_gold_to_prediction": {
+      "contradiction": {
+        "contradiction": 7095,
+        "entailment": 61,
+        "neutral": 566
+      },
+      "entailment": {
+        "contradiction": 54,
+        "entailment": 4954,
+        "neutral": 400
+      },
+      "neutral": {
+        "contradiction": 229,
+        "entailment": 407,
+        "neutral": 9439
+      }
+    },
+    "count": 23205,
+    "gold_label_counts": {
+      "contradiction": 7722,
+      "entailment": 5408,
+      "neutral": 10075
+    },
+    "mean_confidence": 0.97656029,
+    "mean_gold_probability": 0.91840799,
+    "mean_margin": 0.95481431,
+    "mean_negative_log_likelihood": 0.29024368,
+    "mean_normalized_entropy": 0.06448865,
+    "median_confidence": 0.99808806,
+    "predicted_label_counts": {
+      "contradiction": 7378,
+      "entailment": 5422,
+      "neutral": 10405
+    }
+  },
+  "pair_summary": {
+    "pair_count": 9824,
+    "pairs_all_rows_agree": 8326,
+    "pairs_all_rows_agree_at_threshold": 7250
+  },
+  "runtime": {
+    "at_max_length_count": 0,
+    "batch_size": 64,
+    "device": "cuda:1",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "fp16": true,
+    "max_length": 256,
+    "python_version": "3.9.21",
+    "started_at_utc": "2026-10-04T11:49:55.853725+00:00",
+    "torch_version": "1.12.1+cu113",
+    "transformers_version": "4.29.2"
+  },
+  "schema_version": 1,
+  "screening": {
+    "confidence_threshold": 0.95,
+    "disagreement_count": 1717,
+    "high_confidence_agreement_count": 20076
+  },
+  "source_only": {
+    "agreed_count": 8741,
+    "agreement_rate": 0.88975977,
+    "confidence_percentiles": {
+      "p05": 0.80515783,
+      "p25": 0.99016744,
+      "p50": 0.99764829,
+      "p75": 0.99917489,
+      "p95": 0.99968527
+    },
+    "confidence_thresholds": {
+      "0.50": {
+        "agreed_count": 8740,
+        "agreement_rate": 0.89029235,
+        "count": 9817,
+        "coverage": 0.99928746
+      },
+      "0.70": {
+        "agreed_count": 8598,
+        "agreement_rate": 0.90220357,
+        "count": 9530,
+        "coverage": 0.97007329
+      },
+      "0.80": {
+        "agreed_count": 8493,
+        "agreement_rate": 0.90882825,
+        "count": 9345,
+        "coverage": 0.95124186
+      },
+      "0.90": {
+        "agreed_count": 8300,
+        "agreement_rate": 0.92068774,
+        "count": 9015,
+        "coverage": 0.91765065
+      },
+      "0.95": {
+        "agreed_count": 8086,
+        "agreement_rate": 0.92921168,
+        "count": 8702,
+        "coverage": 0.8857899
+      },
+      "0.99": {
+        "agreed_count": 7061,
+        "agreement_rate": 0.95612729,
+        "count": 7385,
+        "coverage": 0.75173046
+      }
+    },
+    "confusion_matrix_gold_to_prediction": {
+      "contradiction": {
+        "contradiction": 2790,
+        "entailment": 17,
+        "neutral": 430
+      },
+      "entailment": {
+        "contradiction": 36,
+        "entailment": 3059,
+        "neutral": 273
+      },
+      "neutral": {
+        "contradiction": 102,
+        "entailment": 225,
+        "neutral": 2892
+      }
+    },
+    "count": 9824,
+    "gold_label_counts": {
+      "contradiction": 3237,
+      "entailment": 3368,
+      "neutral": 3219
+    },
+    "mean_confidence": 0.97166039,
+    "mean_gold_probability": 0.88357827,
+    "mean_margin": 0.9447452,
+    "mean_negative_log_likelihood": 0.43367066,
+    "mean_normalized_entropy": 0.07430099,
+    "median_confidence": 0.99764829,
+    "predicted_label_counts": {
+      "contradiction": 2928,
+      "entailment": 3301,
+      "neutral": 3595
+    }
+  }
+}

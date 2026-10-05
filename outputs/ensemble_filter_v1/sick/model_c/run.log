@@ -1,0 +1,95 @@
+Loading alisawuffles/roberta-large-wanli@42a3e357c1a17b97688c4b8c7b6959e446883f59 ...
+/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'BertTokenizer'. 
+The class this function is called from is 'RobertaTokenizer'.
+/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+NLI inference:   0%|          | 0/171 [00:00<?, ?batch/s]NLI inference:   1%|          | 1/171 [00:00<01:48,  1.56batch/s]NLI inference:   2%|▏         | 3/171 [00:00<00:37,  4.53batch/s]NLI inference:   3%|▎         | 5/171 [00:00<00:24,  6.90batch/s]NLI inference:   4%|▍         | 7/171 [00:01<00:18,  8.88batch/s]NLI inference:   5%|▌         | 9/171 [00:01<00:15, 10.46batch/s]NLI inference:   6%|▋         | 11/171 [00:01<00:14, 11.36batch/s]NLI inference:   8%|▊         | 13/171 [00:01<00:12, 12.32batch/s]NLI inference:   9%|▉         | 15/171 [00:01<00:12, 12.16batch/s]NLI inference:  10%|▉         | 17/171 [00:01<00:12, 12.23batch/s]NLI inference:  11%|█         | 19/171 [00:01<00:11, 13.64batch/s]NLI inference:  12%|█▏        | 21/171 [00:02<00:10, 14.81batch/s]NLI inference:  13%|█▎        | 23/171 [00:02<00:09, 15.80batch/s]NLI inference:  15%|█▍        | 25/171 [00:02<00:09, 16.17batch/s]NLI inference:  16%|█▌        | 27/171 [00:02<00:08, 16.42batch/s]NLI inference:  17%|█▋        | 29/171 [00:02<00:08, 16.72batch/s]NLI inference:  18%|█▊        | 31/171 [00:02<00:08, 16.39batch/s]NLI inference:  19%|█▉        | 33/171 [00:02<00:08, 16.64batch/s]NLI inference:  20%|██        | 35/171 [00:02<00:08, 16.34batch/s]NLI inference:  22%|██▏       | 37/171 [00:02<00:08, 15.98batch/s]NLI inference:  23%|██▎       | 39/171 [00:03<00:08, 16.09batch/s]NLI inference:  24%|██▍       | 41/171 [00:03<00:07, 16.65batch/s]NLI inference:  25%|██▌       | 43/171 [00:03<00:07, 16.87batch/s]NLI inference:  26%|██▋       | 45/171 [00:03<00:07, 17.10batch/s]NLI inference:  27%|██▋       | 47/171 [00:03<00:07, 17.49batch/s]NLI inference:  29%|██▊       | 49/171 [00:03<00:07, 17.20batch/s]NLI inference:  30%|██▉       | 51/171 [00:03<00:07, 16.82batch/s]NLI inference:  31%|███       | 53/171 [00:03<00:06, 17.20batch/s]NLI inference:  32%|███▏      | 55/171 [00:04<00:07, 16.54batch/s]NLI inference:  33%|███▎      | 57/171 [00:04<00:07, 15.97batch/s]NLI inference:  35%|███▍      | 59/171 [00:04<00:06, 16.53batch/s]NLI inference:  36%|███▌      | 61/171 [00:04<00:06, 16.65batch/s]NLI inference:  37%|███▋      | 63/171 [00:04<00:06, 16.84batch/s]NLI inference:  38%|███▊      | 65/171 [00:04<00:06, 17.15batch/s]NLI inference:  40%|███▉      | 68/171 [00:04<00:05, 17.92batch/s]NLI inference:  41%|████      | 70/171 [00:04<00:05, 17.61batch/s]NLI inference:  42%|████▏     | 72/171 [00:05<00:05, 17.77batch/s]NLI inference:  43%|████▎     | 74/171 [00:05<00:05, 17.31batch/s]NLI inference:  44%|████▍     | 76/171 [00:05<00:05, 17.67batch/s]NLI inference:  46%|████▌     | 78/171 [00:05<00:05, 18.16batch/s]NLI inference:  47%|████▋     | 80/171 [00:05<00:04, 18.46batch/s]NLI inference:  48%|████▊     | 82/171 [00:05<00:04, 18.37batch/s]NLI inference:  49%|████▉     | 84/171 [00:05<00:04, 18.10batch/s]NLI inference:  50%|█████     | 86/171 [00:05<00:04, 17.77batch/s]NLI inference:  51%|█████▏    | 88/171 [00:05<00:04, 17.82batch/s]NLI inference:  53%|█████▎    | 90/171 [00:06<00:04, 17.21batch/s]NLI inference:  54%|█████▍    | 92/171 [00:06<00:04, 16.96batch/s]NLI inference:  55%|█████▍    | 94/171 [00:06<00:04, 17.51batch/s]NLI inference:  56%|█████▌    | 96/171 [00:06<00:04, 18.11batch/s]NLI inference:  57%|█████▋    | 98/171 [00:06<00:03, 18.26batch/s]NLI inference:  58%|█████▊    | 100/171 [00:06<00:03, 18.10batch/s]NLI inference:  60%|█████▉    | 102/171 [00:06<00:03, 17.45batch/s]NLI inference:  61%|██████    | 104/171 [00:06<00:03, 17.63batch/s]NLI inference:  62%|██████▏   | 106/171 [00:06<00:03, 18.15batch/s]NLI inference:  63%|██████▎   | 108/171 [00:07<00:03, 16.94batch/s]NLI inference:  64%|██████▍   | 110/171 [00:07<00:03, 15.69batch/s]NLI inference:  65%|██████▌   | 112/171 [00:07<00:03, 14.90batch/s]NLI inference:  67%|██████▋   | 114/171 [00:07<00:03, 14.43batch/s]NLI inference:  68%|██████▊   | 116/171 [00:07<00:03, 14.11batch/s]NLI inference:  69%|██████▉   | 118/171 [00:07<00:03, 13.72batch/s]NLI inference:  70%|███████   | 120/171 [00:07<00:03, 13.86batch/s]NLI inference:  71%|███████▏  | 122/171 [00:08<00:03, 13.37batch/s]NLI inference:  73%|███████▎  | 124/171 [00:08<00:03, 13.10batch/s]NLI inference:  74%|███████▎  | 126/171 [00:08<00:03, 13.27batch/s]NLI inference:  75%|███████▍  | 128/171 [00:08<00:03, 13.41batch/s]NLI inference:  76%|███████▌  | 130/171 [00:08<00:03, 13.25batch/s]NLI inference:  77%|███████▋  | 132/171 [00:08<00:02, 13.26batch/s]NLI inference:  78%|███████▊  | 134/171 [00:09<00:02, 13.17batch/s]NLI inference:  80%|███████▉  | 136/171 [00:09<00:02, 13.00batch/s]NLI inference:  81%|████████  | 138/171 [00:09<00:02, 13.83batch/s]NLI inference:  82%|████████▏ | 140/171 [00:09<00:02, 14.05batch/s]NLI inference:  83%|████████▎ | 142/171 [00:09<00:02, 14.23batch/s]NLI inference:  84%|████████▍ | 144/171 [00:09<00:01, 13.96batch/s]NLI inference:  85%|████████▌ | 146/171 [00:09<00:01, 13.99batch/s]NLI inference:  87%|████████▋ | 148/171 [00:10<00:01, 14.14batch/s]NLI inference:  88%|████████▊ | 150/171 [00:10<00:01, 13.81batch/s]NLI inference:  89%|████████▉ | 152/171 [00:10<00:01, 13.83batch/s]NLI inference:  90%|█████████ | 154/171 [00:10<00:01, 14.28batch/s]NLI inference:  91%|█████████ | 156/171 [00:10<00:01, 13.26batch/s]NLI inference:  92%|█████████▏| 158/171 [00:10<00:00, 13.77batch/s]NLI inference:  94%|█████████▎| 160/171 [00:10<00:00, 13.55batch/s]NLI inference:  95%|█████████▍| 162/171 [00:11<00:00, 13.45batch/s]NLI inference:  96%|█████████▌| 164/171 [00:11<00:00, 12.78batch/s]NLI inference:  97%|█████████▋| 166/171 [00:11<00:00, 13.12batch/s]NLI inference:  98%|█████████▊| 168/171 [00:11<00:00, 13.36batch/s]NLI inference:  99%|█████████▉| 170/171 [00:11<00:00, 13.59batch/s]NLI inference: 100%|██████████| 171/171 [00:11<00:00, 14.61batch/s]
+{
+  "summary": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/sick/.model_c-u_cbzjvi/summary.json",
+  "overall": {
+    "count": 10925,
+    "agreed_count": 9548,
+    "agreement_rate": 0.87395881,
+    "mean_confidence": 0.95202893,
+    "median_confidence": 0.99247485,
+    "confidence_percentiles": {
+      "p05": 0.68841497,
+      "p25": 0.97329164,
+      "p50": 0.99247485,
+      "p75": 0.99649966,
+      "p95": 0.99822277
+    },
+    "mean_gold_probability": 0.86176943,
+    "mean_margin": 0.90778922,
+    "mean_normalized_entropy": 0.12454486,
+    "mean_negative_log_likelihood": 0.4214975,
+    "gold_label_counts": {
+      "contradiction": 2758,
+      "entailment": 2243,
+      "neutral": 5924
+    },
+    "predicted_label_counts": {
+      "contradiction": 3299,
+      "entailment": 2194,
+      "neutral": 5432
+    },
+    "confusion_matrix_gold_to_prediction": {
+      "entailment": {
+        "entailment": 1972,
+        "neutral": 238,
+        "contradiction": 33
+      },
+      "neutral": {
+        "entailment": 190,
+        "neutral": 5022,
+        "contradiction": 712
+      },
+      "contradiction": {
+        "entailment": 32,
+        "neutral": 172,
+        "contradiction": 2554
+      }
+    },
+    "confidence_thresholds": {
+      "0.50": {
+        "count": 10895,
+        "coverage": 0.997254,
+        "agreement_rate": 0.87563102,
+        "agreed_count": 9540
+      },
+      "0.70": {
+        "count": 10343,
+        "coverage": 0.94672769,
+        "agreement_rate": 0.8947114,
+        "agreed_count": 9254
+      },
+      "0.80": {
+        "count": 9993,
+        "coverage": 0.91469108,
+        "agreement_rate": 0.90833584,
+        "agreed_count": 9077
+      },
+      "0.90": {
+        "count": 9445,
+        "coverage": 0.86453089,
+        "agreement_rate": 0.92387507,
+        "agreed_count": 8726
+      },
+      "0.95": {
+        "count": 8854,
+        "coverage": 0.81043478,
+        "agreement_rate": 0.93878473,
+        "agreed_count": 8312
+      },
+      "0.99": {
+        "count": 6441,
+        "coverage": 0.58956522,
+        "agreement_rate": 0.97081199,
+        "agreed_count": 6253
+      }
+    }
+  }
+}

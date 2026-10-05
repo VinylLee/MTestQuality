@@ -1,0 +1,51 @@
+{
+  "policy_name": "conservative_consensus_v1",
+  "datasets": ["snli", "mnlim", "mnlimm", "sick"],
+  "dataset_paths": {
+    "snli": "data/snli_v3_3/augmented/snli.jsonl",
+    "mnlim": "data/mnlim_v3_3/augmented/mnlim.jsonl",
+    "mnlimm": "data/mnlimm_v3_3/augmented/mnlimm.jsonl",
+    "sick": "data/sick_v3_3/augmented/sick.jsonl"
+  },
+  "output_root": "outputs/ensemble_filter_v1",
+  "source_confidence_threshold": 0.80,
+  "followup_confidence_threshold": 0.95,
+  "min_eligible_voters": 3,
+  "min_wrong_consensus": 3,
+  "block_on_high_conf_gold_support": true,
+  "source_accuracy_floor": 0.40,
+  "probability_sum_tolerance": 0.00001,
+  "runtime": {"device": "cuda:1", "batch_size": 64, "max_length": 256, "fp16": true},
+  "models": [
+    {
+      "id": "model_a",
+      "name": "cross-encoder/nli-deberta-v3-large",
+      "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "label_order": ["contradiction", "entailment", "neutral"],
+      "batch_size": 128,
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json"
+    },
+    {
+      "id": "model_b",
+      "name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "label_order": ["entailment", "neutral", "contradiction"],
+      "mapping_source": "https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/blob/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json"
+    },
+    {
+      "id": "model_c",
+      "name": "alisawuffles/roberta-large-wanli",
+      "revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "label_order": ["contradiction", "entailment", "neutral"],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json"
+    },
+    {
+      "id": "model_d",
+      "name": "facebook/bart-large-mnli",
+      "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "label_order": ["contradiction", "neutral", "entailment"],
+      "mapping_source": "https://huggingface.co/facebook/bart-large-mnli/blob/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json"
+    }
+  ],
+  "reuse_audits": {"snli": {"model_a": "outputs/snli_v3_3_cross_encoder_deberta_v3_large"}}
+}

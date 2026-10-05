@@ -1,6 +1,6 @@
 # MTestQuality
 
-用于审计 NLI 增强测试数据质量的独立工具。当前版本使用训练好的三分类 NLI cross-encoder，对每条 `premise` / `hypothesis` 重新推理，并记录模型预测、三类概率、置信度、margin、熵、与数据标签是否一致，以及按 source、label、MR 和 `pair_id` 聚合的统计信息。
+用于审计和保守过滤 NLI 增强测试数据质量的独立工具。单模型 evaluator 对每条 `premise` / `hypothesis` 重新推理，记录预测、概率、置信度、margin、熵和分组统计；ensemble 流程复用该 evaluator，对 SNLI、MNLIM、MNLIMM、SICK 使用四个固定版本 auditor，通过 source gating 和同向高置信错误共识逐条过滤增强记录。
 
 当前默认模型是 [`cross-encoder/nli-deberta-v3-large`](https://huggingface.co/cross-encoder/nli-deberta-v3-large)。它在 SNLI 和 MultiNLI 上训练，适合对 SNLI 体系的增强数据做 in-domain 自动筛查。自动审计结果是候选筛选信号，不应直接视为人工金标。
 
@@ -14,7 +14,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-项目已包含 SNLI、MNLI-matched、MNLI-mismatched 和 SICK 四套 v3.3 数据；其中 SNLI 已审计，其余三套已增强完成并等待审计。首次推理时仍会从 Hugging Face 下载模型权重；若要把模型缓存放在项目目录：
+项目已包含 SNLI、MNLI-matched、MNLI-mismatched 和 SICK 四套 v3.3 数据，四套均已完成四模型 ensemble 审计和保守过滤。结果与验收记录见 [`outputs/ensemble_filter_v1/REPORT.md`](outputs/ensemble_filter_v1/REPORT.md)。首次推理时仍会从 Hugging Face 下载模型权重；若要把模型缓存放在项目目录：
 
 ```bash
 export HF_HOME="$PWD/nli_model_cache"
@@ -128,13 +128,51 @@ python evaluate_nli_quality.py data.jsonl \
 - 构建测试集时应按 `pair_id` 整组切分，避免 source 和增强变体跨集合泄漏。
 - 建议对高置信一致、高置信不一致和低置信三组分别做人审抽样。
 
+## 四模型 ensemble 过滤
+
+完整规则见 [`docs/MULTI_DATASET_ENSEMBLE_FILTERING_PLAN.md`](docs/MULTI_DATASET_ENSEMBLE_FILTERING_PLAN.md)。默认配置为 [`configs/ensemble_filter_v1.json`](configs/ensemble_filter_v1.json)，输入路径和输出根目录相对于项目根目录解析，可在配置中修改，不在 Python 中写死版本号。
+
+默认四个 auditor 分别是 DeBERTa baseline、diverse-data DeBERTa、WANLI-only RoBERTa 和 BART-MNLI。配置固定了完整 commit SHA、经官方 `config.json` 核对的 logits 顺序及来源链接。模型按数据集、按 auditor 顺序在独立子进程中运行；子进程退出会释放该模型的 CUDA 分配和缓存。下载的权重保存在 `nli_model_cache/hub/`，不纳入 Git。
+
+```bash
+# 本机两张 GPU 中默认使用 cuda:1；其他机器请修改 config.runtime.device。
+# CPU 运行还应将 fp16 设置为 false。
+python run_ensemble_audit.py --smoke-only --output-root outputs/new_smoke_check
+
+# 先完成 SNLI 的真实全流程
+python run_ensemble_audit.py --datasets snli --resume
+
+# 验证已完成结果后继续其余数据集，并生成四数据集总表
+python run_ensemble_audit.py --resume
+
+# 只重新执行过滤，无需重新跑模型；写入新的目录
+python filter_nli_ensemble.py --dataset snli \
+  --audit-root outputs/ensemble_filter_v1/snli \
+  --output-dir outputs/snli_ensemble_refilter
+
+# 自动测试无需下载模型或运行 GPU 推理
+python -m unittest discover -s tests -v
+```
+
+正式规则：source 预测正确且 confidence ≥ 0.80 的 auditor 才有资格投票；至少 3 个合格 auditor 对增强记录以 confidence ≥ 0.95 预测出同一个错误标签，且没有合格 auditor 高置信支持 gold，才删除这条增强记录。source 永远保留，同一 pair 的其他增强变体独立决策，不平均跨模型概率。
+
+每个 `outputs/ensemble_filter_v1/<dataset>/` 包含四份独立单模型输出，以及：
+
+- `ensemble_predictions.jsonl`：全部原始字段及逐模型证据、决策和理由。
+- `filtered.jsonl`：全部 source 和保留的增强记录，保持输入相对顺序，附带 `ensemble_quality`。
+- `removed.jsonl`：仅删除的增强记录，附带完整删除证据。
+- `ensemble_summary.json`：按 dataset、gold label、MR、决策理由、共识标签、eligible voter 数的统计，source auditor 健康检查和阈值敏感性。
+- `model_manifest.json`：输入哈希、固定模型 revision、映射、运行环境及产物哈希。
+
+四个数据集全部成功后生成 `summary_all_datasets.json`；只选择部分数据集时生成 `summary_selected_datasets.json`。removal rate 的分母是增强记录数，source 不计入该分母。0.90 / 0.95 / 0.99 敏感性统计分别重算错误票和 gold blocker，不改变正式过滤文件。
+
+无 source、多个 source、缺失 pair id 或不合法的 source 标记会保留该增强记录，并记录 `invalid_pair_structure`。位置已对齐但单条预测字段不完整时保留，并记录 `incomplete_model_results`。整份审计缺失、输入哈希/数量/行号/原始字段不一致、无法确认标签映射、NaN/Inf、概率和偏离 1 超过 1e-5，或 source accuracy < 0.40，都会停止该数据集，不发布过滤文件。
+
+已有输出不会被默认覆盖。`--resume` 会重新核验已完成单模型与 ensemble 的输入、配置、版本和产物哈希。失败的单模型日志保留在该数据集目录的 `.model_*-*/` 中；重新运行会使用新的临时目录。已有 SNLI baseline 只有通过固定 revision、输入、运行参数和完整逐行核验后才复用；历史请求 revision 仍记录为 `main`，实际使用的 resolved revision 已固定。原 SNLI 结果目录与输入文件保持不变。
+
 ## 后续计划
 
-当前项目刻意只保留已经运行验证过的单模型审计能力。计划中的工作记录在 [`docs/ROADMAP.md`](docs/ROADMAP.md)：
-
-1. 接入其他测试数据集的增强数据并统一审计。
-2. 增加第二类模型的交叉审计。
-3. 在多模型结果基础上增加可配置筛选功能。
+多数据集接入、四模型交叉审计及保守筛选已实现。历史路线见 [`docs/ROADMAP.md`](docs/ROADMAP.md)，本次实现与验收依据见 ensemble 实施方案。
 
 ## 已验证环境
 

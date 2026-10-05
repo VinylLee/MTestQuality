@@ -1,0 +1,129 @@
+{
+  "config_sha256": "3dcf79e702130bd088aae5765d824f55484ff6a2731ba6b8ae761b8b2016dc30",
+  "dataset": "snli",
+  "input": {
+    "path": "/home/ubuntu/MTestQuality/data/snli_v3_3/augmented/snli.jsonl",
+    "record_count": 23205,
+    "sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53"
+  },
+  "models": {
+    "model_a": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_a",
+      "input_sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "1079d33cfb02e5cc9494531a35e420b8561ea41064104854751c99ae173a2545",
+      "record_count": 23205,
+      "requested_revision": "main",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 128,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-09-23T05:54:30.976031+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "1f7828302b3a164e70bd6a33d68df3a796fbc151a8806e82dd92055b856efea1"
+    },
+    "model_b": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_b",
+      "input_sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53",
+      "label_order": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "mapping_source": "https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/blob/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json",
+      "model_name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "predictions_sha256": "b34b3e93ef9e93eab8b2edc62158b1dbd08f3de362c0948d316351c042729a6f",
+      "record_count": 23205,
+      "requested_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "resolved_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 64,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:49:55.853725+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "519c466ee562c10515c648e7bf91a8e1016de2ffb156de5c487015d157ac8b87"
+    },
+    "model_c": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_c",
+      "input_sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "e1e4fadce282d504e265e80082ea016bd838aff3b0e2de770839a4db9e5c25c5",
+      "record_count": 23205,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 64,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:50:42.203500+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "aa4510361b0dc894054ac0b717a15de04c735c7afa347b3424b282fc8fd3b9a7"
+    },
+    "model_d": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_d",
+      "input_sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53",
+      "label_order": [
+        "contradiction",
+        "neutral",
+        "entailment"
+      ],
+      "mapping_source": "https://huggingface.co/facebook/bart-large-mnli/blob/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json",
+      "model_name": "facebook/bart-large-mnli",
+      "predictions_sha256": "fa1c25c17e50c2f08725cdb48b4d56038e39a875f34c57b8d1d959ffc9e6f63b",
+      "record_count": 23205,
+      "requested_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "resolved_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 64,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:51:22.922047+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "fbba56aa96af221f683fd5fe7fb24d931cfb794cf4386166f0e1aec8a432b5fb"
+    }
+  },
+  "output_sha256": {
+    "ensemble_predictions.jsonl": "5fb6d18e6869bd51a2ae384e009c1882ca9d49f317c355f5c4a5ab3d949c7d6a",
+    "filtered.jsonl": "bf510df732ebe9f6ef2ed4ee9a699ce6e8c0b3b078500566d96ac564cced2af9",
+    "removed.jsonl": "a435245a28ec591f98969bed84aad07f0193a2ce01b84b7b55cb81719cc304b7"
+  },
+  "schema_version": 1
+}

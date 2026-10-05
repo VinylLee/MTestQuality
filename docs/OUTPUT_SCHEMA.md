@@ -62,3 +62,30 @@
 ## 可复现性
 
 复现实验时至少应保留：输入 SHA-256、模型的 `resolved_revision`、模型标签顺序、PyTorch/Transformers 版本、fp16 状态、`max_length` 和 `batch_size`。
+
+## Ensemble 输入与输出
+
+Ensemble 额外要求 `pair_id` 和 boolean `is_source`。没有合法且唯一 source 的增强记录保留并标记 `invalid_pair_structure`。按 JSONL 非空记录的零起始 `row_position` join，`idx` 可重复；原字段必须与输入逐条一致。保留记录的相对顺序不变。
+
+`ensemble_predictions.jsonl`、`filtered.jsonl`、`removed.jsonl` 都保留原始字段，并增加 `ensemble_quality`：
+
+| 字段 | 含义 |
+|---|---|
+| `policy` | `conservative_consensus_v1` |
+| `row_position` | 原始输入记录位置 |
+| `decision` / `reason` | `keep` 或 `drop`，以及具体理由 |
+| `eligible_voter_count` | source 预测正确且达到 source 阈值的模型数 |
+| `wrong_consensus_label` / `wrong_consensus_count` | 高置信错误票的最大同向共识及票数；无错误票时标签为 null |
+| `high_conf_gold_support_count` | 合格且高置信支持增强 gold 的模型数 |
+| `supporting_models` | 最大同向错误票的模型 id；KEEP 时也可能存在错误票 |
+| `per_model` | source eligibility、source 与增强预测/置信度、错误票及 gold 支持票 |
+
+source 的 reason 始终为 `source_preserved`，per-model 中记录其 source 预测和置信度。其他 KEEP 理由为 `invalid_pair_structure`、`incomplete_model_results`、`insufficient_eligible_voters`、`high_confidence_gold_support` 或 `insufficient_wrong_consensus`；DROP 理由为 `high_confidence_wrong_consensus`。异常结构没有可用 source 证据，per-model 可为空。
+
+`ensemble_summary.json` 保存输入 SHA-256、配置 fingerprint、policy 参数、source/增强数量、保留/删除数量及 removal rate。`by` 分别按 label、mr_type、mr_id、dataset、wrong_consensus_label、decision_reason 和 eligible_voter_count 分组；各组分别统计 source 与增强数量。`source_auditor_health` 包含 accuracy、confidence ≥ source threshold 的 accuracy/coverage 和逐标签 accuracy。空分组 accuracy 为 null。
+
+`threshold_sensitivity` 在固定 source gating 下分别用 0.90、0.95、0.99 重算增强错误票与 gold 支持票，只记录模拟删除统计。默认正式输出始终使用配置中的 0.95。
+
+`model_manifest.json` 按模型保存 name、requested/resolved revision、label order、映射来源、运行环境、输入哈希、单模型 predictions/summary 哈希，以及三份 ensemble JSONL 的哈希。Ensemble summary 不包含运行时钟信息，因此相同输入、配置和预测生成相同 decisions 与 summary。
+
+`summary_all_datasets.json` 包含四数据集总表、全部数据集 summary、汇总计数、MR/gold label removal rate 及三个阈值的敏感性。它只在所有配置数据集成功后发布。

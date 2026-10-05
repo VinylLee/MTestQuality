@@ -1,0 +1,54 @@
+Loading alisawuffles/roberta-large-wanli@42a3e357c1a17b97688c4b8c7b6959e446883f59 ...
+/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+urllib3.exceptions.SSLError: TLS/SSL connection has been closed (EOF) (_ssl.c:1147)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /alisawuffles/roberta-large-wanli/resolve/42a3e357c1a17b97688c4b8c7b6959e446883f59/tokenizer_config.json (Caused by SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1147)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/MTestQuality/evaluate_nli_quality.py", line 552, in <module>
+    main()
+  File "/home/ubuntu/MTestQuality/evaluate_nli_quality.py", line 373, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 643, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 487, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/transformers/utils/hub.py", line 417, in cached_file
+    resolved_file = hf_hub_download(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1024, in _hf_hub_download_to_cache_dir
+    (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = _get_metadata_or_catch_error(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 308, in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/utils/_http.py", line 96, in send
+    return super().send(request, *args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/requests/adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /alisawuffles/roberta-large-wanli/resolve/42a3e357c1a17b97688c4b8c7b6959e446883f59/tokenizer_config.json (Caused by SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1147)')))"), '(Request ID: a0875e4c-8140-43b7-9a79-65d70be44e12)')

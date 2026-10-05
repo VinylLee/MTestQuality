@@ -1,0 +1,95 @@
+Loading alisawuffles/roberta-large-wanli@42a3e357c1a17b97688c4b8c7b6959e446883f59 ...
+/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'BertTokenizer'. 
+The class this function is called from is 'RobertaTokenizer'.
+/home/ubuntu/anaconda3/envs/MTrain3.9/lib/python3.9/site-packages/huggingface_hub/file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+NLI inference:   0%|          | 0/1 [00:00<?, ?batch/s]NLI inference: 100%|██████████| 1/1 [00:00<00:00,  1.27batch/s]NLI inference: 100%|██████████| 1/1 [00:00<00:00,  1.27batch/s]
+{
+  "summary": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/validation/smoke/model_c/summary.json",
+  "overall": {
+    "count": 6,
+    "agreed_count": 6,
+    "agreement_rate": 1.0,
+    "mean_confidence": 0.99700982,
+    "median_confidence": 0.99745423,
+    "confidence_percentiles": {
+      "p05": 0.99455655,
+      "p25": 0.99528097,
+      "p50": 0.99745423,
+      "p75": 0.99862756,
+      "p95": 0.99901867
+    },
+    "mean_gold_probability": 0.99700982,
+    "mean_margin": 0.9947384,
+    "mean_normalized_entropy": 0.01948338,
+    "mean_negative_log_likelihood": 0.00299638,
+    "gold_label_counts": {
+      "contradiction": 2,
+      "entailment": 2,
+      "neutral": 2
+    },
+    "predicted_label_counts": {
+      "contradiction": 2,
+      "entailment": 2,
+      "neutral": 2
+    },
+    "confusion_matrix_gold_to_prediction": {
+      "entailment": {
+        "entailment": 2,
+        "neutral": 0,
+        "contradiction": 0
+      },
+      "neutral": {
+        "entailment": 0,
+        "neutral": 2,
+        "contradiction": 0
+      },
+      "contradiction": {
+        "entailment": 0,
+        "neutral": 0,
+        "contradiction": 2
+      }
+    },
+    "confidence_thresholds": {
+      "0.50": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.70": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.80": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.90": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.95": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      },
+      "0.99": {
+        "count": 6,
+        "coverage": 1.0,
+        "agreement_rate": 1.0,
+        "agreed_count": 6
+      }
+    }
+  }
+}

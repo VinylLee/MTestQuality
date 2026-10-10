@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-10-10T02:21:58.729559+00:00",
+  "archive": "backups/mr_test_data_merged_original/originals.tar.gz",
+  "archive_sha256": "276326ee082167eca93f49b9fe16c4a37f0e5b30a5fa7dde9cdc04fc2c5f7859",
+  "byte_verified": true,
+  "files": [
+    {
+      "path": "data/mr_test_data_merged/mnlim.jsonl",
+      "sha256": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "size": 6953231,
+      "line_count": 22423,
+      "mtime_ns": 1786409400000000000
+    },
+    {
+      "path": "data/mr_test_data_merged/mnlimm.jsonl",
+      "sha256": "0f0f83aeff374e4f3a63801d79b5b45216e25c5e4e0f1f9b0ac78bf51f12e3cc",
+      "size": 7218743,
+      "line_count": 22416,
+      "mtime_ns": 1786409400000000000
+    },
+    {
+      "path": "data/mr_test_data_merged/sick.jsonl",
+      "sha256": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "size": 2493604,
+      "line_count": 10655,
+      "mtime_ns": 1786409400000000000
+    },
+    {
+      "path": "data/mr_test_data_merged/snli.jsonl",
+      "sha256": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686",
+      "size": 5709599,
+      "line_count": 22548,
+      "mtime_ns": 1786409400000000000
+    }
+  ]
+}

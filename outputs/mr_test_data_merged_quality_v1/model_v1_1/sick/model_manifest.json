@@ -1,0 +1,126 @@
+{
+  "config_sha256": "d81000b45c907472d84686f9645b2e6e321c0014938715b0ea69ba47a7f72050",
+  "dataset": "sick",
+  "inference_performed": false,
+  "input": {
+    "path": "/home/ubuntu/MTestQuality/data/mr_test_data_merged/sick.jsonl",
+    "record_count": 10655,
+    "sha256": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811"
+  },
+  "models": {
+    "model_a": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/sick/model_a",
+      "input_sha256": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "264e58a9fc42a233a0d328d18daeb0cd8599bb701243455a323cdb3185c128f5",
+      "record_count": 10655,
+      "requested_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "1f6ea8cd3be717db2efbf98cb1a8425e3ca47f9a17ab1fd79eb8063ede9e8f46"
+    },
+    "model_b": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/sick/model_b",
+      "input_sha256": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "label_order": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "mapping_source": "https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/blob/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json",
+      "model_name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "predictions_sha256": "c4452da307203477da852a58ef6f3bc45d9dacb488f5494794b4f0e04fc6f964",
+      "record_count": 10655,
+      "requested_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "resolved_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "46ddb9b0eb187d39309c4399fb4dc0348ad56d848aaf34414035cffcc1098b92"
+    },
+    "model_c": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/sick/model_c",
+      "input_sha256": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "37a51e8269b349786d37399d631ccb58d990af8d3ee7db12da3488c59d77c37a",
+      "record_count": 10655,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "0544ea4ff138a6593533462c3d2fea26af645faee612fea2ad04e897bf977465"
+    },
+    "model_d": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/sick/model_d",
+      "input_sha256": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "label_order": [
+        "contradiction",
+        "neutral",
+        "entailment"
+      ],
+      "mapping_source": "https://huggingface.co/facebook/bart-large-mnli/blob/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json",
+      "model_name": "facebook/bart-large-mnli",
+      "predictions_sha256": "6a7b898802a697f858e549148c30c1cd7ed9dcd08f70d9db08be77a553c51914",
+      "record_count": 10655,
+      "requested_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "resolved_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "cecc9b8bd5bf552d66934a0454f1852d9ad183531347de8480f459ddd4a74526"
+    }
+  },
+  "output_sha256": {
+    "ensemble_predictions.jsonl": "5d104ef818973b881b66ce0d9e326442a48892c0d648c887161a2fd76a14f8e4",
+    "ensemble_summary.json": "a8f891730e2155c3232c4cc15326e298a571bf74f08fcc6bf0c6438c0115c0b3",
+    "filtered.jsonl": "b9919d43f1941849cd69829d943a8d890f53c9669066cf6a9b4f02f1f2678089",
+    "policy_diff_from_v1.json": "3bdbe0a4cde7522693e23a9997e3f8d531f4f8576fe4251d92967b646787991a",
+    "removed.jsonl": "0e6b5820f08d54551cc5b48498ec8ccef8fb1f314fef2e4ef2e8841e1cf61e3b",
+    "rescued_from_v1.jsonl": "3a58321c2dada32c5a18c9b746b6ef9a26f6f7fca7b17090156683b9113992a7"
+  },
+  "schema_version": "1.1",
+  "source_v1_manifest_sha256": "36f1acabfb3836a4d06bac4c1b36d28592379225cf389f409bfa646a9b58d28f"
+}

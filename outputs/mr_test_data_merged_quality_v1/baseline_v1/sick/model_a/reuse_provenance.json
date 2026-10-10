@@ -1,0 +1,212 @@
+{
+  "actual_batch_sizes": {
+    "16": 2637
+  },
+  "actual_new_runtime": {
+    "batch_size": 16,
+    "device": "cuda:1",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "fp16": true,
+    "local_files_only": true,
+    "max_length": 256,
+    "python_version": "3.9.21",
+    "tokenizer_use_fast": false,
+    "torch_version": "1.12.1+cu113",
+    "transformers_version": "4.29.2"
+  },
+  "checkpoint_identity": {
+    "config_sha256": "f770d4617c2cb5d6ab5ea5818b42e892bf8da9d9c28ea6bb80930a156a553a7d",
+    "history_receipts_sha256": "4c76673a80c8d9d19fec16816a8a2cca636e07ecef99a7690baadc617f9881bf",
+    "implementation_sha256": {
+      "evaluate_nli_quality.py": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+      "filter_nli_ensemble.py": "20fead3faf61d9b8afe75eb1f74d32d6b46b8dbf05945a160c3ccac859e9785b",
+      "refilter_ensemble_v1_1.py": "8556d43ff4096af0a947002bad7ce2e1c9777077a96f5d917f8dce056a9c2a29",
+      "run_merged_quality_audit.py": "c9ee4485eac886626b8eb14d8fd2a541a42e17eb73b8e449d110ecb9b4ca0b69"
+    },
+    "input_sha256": {
+      "mnlim": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "mnlimm": "0f0f83aeff374e4f3a63801d79b5b45216e25c5e4e0f1f9b0ac78bf51f12e3cc",
+      "sick": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "snli": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686"
+    },
+    "missing_inputs_sha256": "ce3f14004e218447535bab21dae60381107bb06ee0d4e790d78d3f84aa68e95c",
+    "model": {
+      "id": "model_a",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "name": "cross-encoder/nli-deberta-v3-large",
+      "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712"
+    }
+  },
+  "historical_audits": [
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_a",
+      "dataset": "snli",
+      "input_sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "1079d33cfb02e5cc9494531a35e420b8561ea41064104854751c99ae173a2545",
+      "record_count": 23205,
+      "requested_revision": "main",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 128,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-09-23T05:54:30.976031+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "1f7828302b3a164e70bd6a33d68df3a796fbc151a8806e82dd92055b856efea1",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    },
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/mnlim/model_a",
+      "dataset": "mnlim",
+      "input_sha256": "474b459b66bc3e55e7f74ac0b143f4e6fb253adb93c0bfe6a571d9c4fb44eed4",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "30fd0345bb0c8de841b845ec4a24369cbfa857f74e6d20082468c48c66cd6800",
+      "record_count": 20249,
+      "requested_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 128,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:52:27.937257+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "4b3d518f5f6c9c87f6e120a2c01f1c035a5877c015eb695b38927bf978f58285",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    },
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/mnlimm/model_a",
+      "dataset": "mnlimm",
+      "input_sha256": "b1848583ab00e6a0cbdbfde85e51e86e429e83df3976fb5bfab22d42e0f125d1",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "1dd0674361e69fb7abcbe640ccd4d6515909509abb282c2764c3237533eb9c39",
+      "record_count": 20257,
+      "requested_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 128,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:56:46.521854+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "6de917c27a5f4ee785e5a2f391a71ab460b629441d3480b6dd2520ea33846cba",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    },
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/sick/model_a",
+      "dataset": "sick",
+      "input_sha256": "b5f33b8174a2a594a3e2a201a71243d698796cbc71cf145da88448ebf31ed691",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "bea346a55ad1ae3e182ce24a9a1cbaef65b543e1f306d5eca8346657dadd5360",
+      "record_count": 10925,
+      "requested_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 128,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T12:01:11.785799+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "a4103548ae363948bdeb09cf10edad47bf43bc84e3ae1813c63e00ed57f3f44b",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    }
+  ],
+  "oom_events": [],
+  "reuse_counts": {
+    "historical_reuse": 5002,
+    "new_inference": 5653
+  }
+}

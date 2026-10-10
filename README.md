@@ -221,6 +221,36 @@ python -m unittest discover -s tests -p '*v1_1.py' -v
 
 多数据集接入、四模型交叉审计、保守筛选及 V1.1 离线重新过滤已实现。历史路线见 [`docs/ROADMAP.md`](docs/ROADMAP.md)，规则及验收依据见相应 ensemble 实施方案。
 
+## 旧提示词 merged 数据质量审计
+
+`data/mr_test_data_merged/` 的原始数据独立处理，入口为 `run_merged_quality_audit.py`，配置为 [`configs/mr_test_data_merged_quality_v1.json`](configs/mr_test_data_merged_quality_v1.json)：
+
+```bash
+python run_merged_quality_audit.py
+# 失败后，核验输入、配置、实现、历史输出和有效预测检查点再继续：
+python run_merged_quality_audit.py --resume
+```
+
+原始四文件的逐字节备份、SHA-256/大小/行数/mtime 清单和 GitHub 远端核验凭据在 `backups/mr_test_data_merged_original/`。入口要求备份与远端凭据通过核验；默认输出 `outputs/mr_test_data_merged_quality_v1/`，完整处理通过后才发布目录。已有结果不覆盖；中断日志和每批预测保留在同级隐藏 `.inprogress` 目录。
+
+四模型固定 revision、logits 映射、slow tokenizer、256 token 截断和 fp16 与历史审计保持一致。仅复用通过历史文件哈希、模型配置、分词实现和三分类概率核验的**精确原文输入**；同输入历史概率不一致时重新推理。每条记录重建当前 gold 的 agreement、概率、rank、NLL、行号和来源。补充推理对精确输入去重，四模型串行共享 `cuda:1`，从 batch 16 开始；OOM 降至 8、4、2、1，显存不足时等待。
+
+最终决策依次为：保留全部 source → 隔离规范化文本标签冲突组的全部增强 → 调用现有 V1.1 模型规则 → 对剩余同标签记录去重。比较只在各数据集内执行 NFC 和空白折叠，不修改原文。重复组保留全部 source；没有 source 时保留模型筛选通过的最早增强。`conditional_clause` 的模型删除保护继续生效，但标签冲突和重复检查仍适用。
+
+每套输出完整逐条 `ensemble_predictions.jsonl`、`filtered.jsonl`、`removed.jsonl`、`conflict_quarantine.jsonl`（removed 子集）、`source_warnings.jsonl`、分组报告、统计和 manifest。质量字段 `merged_quality` 记录互斥最终原因及结构/冲突/重复证据；完整 V1 和 V1.1 模型决策分别保留。根目录含本批 `baseline_v1/`、`model_v1_1/`、逐批补充推理凭据、总报告、完整性验收和所有产物哈希。模型权重缓存不提交。
+
+本次真实结果见 [`outputs/mr_test_data_merged_quality_v1/REPORT.md`](outputs/mr_test_data_merged_quality_v1/REPORT.md)：
+
+| 数据集 | 输入 | 保留 | 冲突隔离 | V1.1 模型删除 | 重复删除 |
+|---|---:|---:|---:|---:|---:|
+| SNLI | 22,548 | 22,140 | 42 | 326 | 40 |
+| MNLIM | 22,423 | 21,686 | 23 | 298 | 416 |
+| MNLIMM | 22,416 | 21,690 | 2 | 310 | 414 |
+| SICK | 10,655 | 10,580 | 1 | 67 | 7 |
+| 总计 | 78,042 | 76,096 | 68 | 1,001 | 877 |
+
+34,377 条 source 全部保留；移除 1,946 条增强，剩余 41,719 条增强。各原因互斥，冲突视图不重复计数。四模型补充推理共 168,805 个模型/精确输入组合，实际 batch 均为 16，未出现 OOM；完整验收凭据见 [`docs/MERGED_QUALITY_VALIDATION.json`](docs/MERGED_QUALITY_VALIDATION.json)。
+
 ## 已验证环境
 
 首次 SNLI v3.3 完整审计使用：Python 3.9.21、PyTorch 1.12.1+cu113、Transformers 4.29.2、RTX 3090、fp16。23,205 条记录均成功推理，且无记录触发 256-token 截断上限。

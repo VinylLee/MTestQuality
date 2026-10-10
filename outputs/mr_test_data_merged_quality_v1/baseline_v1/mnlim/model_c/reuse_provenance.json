@@ -1,0 +1,212 @@
+{
+  "actual_batch_sizes": {
+    "16": 2639
+  },
+  "actual_new_runtime": {
+    "batch_size": 16,
+    "device": "cuda:1",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "fp16": true,
+    "local_files_only": true,
+    "max_length": 256,
+    "python_version": "3.9.21",
+    "tokenizer_use_fast": false,
+    "torch_version": "1.12.1+cu113",
+    "transformers_version": "4.29.2"
+  },
+  "checkpoint_identity": {
+    "config_sha256": "f770d4617c2cb5d6ab5ea5818b42e892bf8da9d9c28ea6bb80930a156a553a7d",
+    "history_receipts_sha256": "ac69c998b476e985d9c9e3d866f940abb2bc6f2389291b1d8bab20947db233ee",
+    "implementation_sha256": {
+      "evaluate_nli_quality.py": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+      "filter_nli_ensemble.py": "20fead3faf61d9b8afe75eb1f74d32d6b46b8dbf05945a160c3ccac859e9785b",
+      "refilter_ensemble_v1_1.py": "8556d43ff4096af0a947002bad7ce2e1c9777077a96f5d917f8dce056a9c2a29",
+      "run_merged_quality_audit.py": "c9ee4485eac886626b8eb14d8fd2a541a42e17eb73b8e449d110ecb9b4ca0b69"
+    },
+    "input_sha256": {
+      "mnlim": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "mnlimm": "0f0f83aeff374e4f3a63801d79b5b45216e25c5e4e0f1f9b0ac78bf51f12e3cc",
+      "sick": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "snli": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686"
+    },
+    "missing_inputs_sha256": "583cecbf12841c81710f345942288cea13a2ff0c78472f5263a4eb1f6e530180",
+    "model": {
+      "id": "model_c",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "name": "alisawuffles/roberta-large-wanli",
+      "revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59"
+    }
+  },
+  "historical_audits": [
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/snli/model_c",
+      "dataset": "snli",
+      "input_sha256": "acb67f77853b4d63329a85cec8cbbcb0a878d453bd69d08f6754169918a87e53",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "e1e4fadce282d504e265e80082ea016bd838aff3b0e2de770839a4db9e5c25c5",
+      "record_count": 23205,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 64,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:50:42.203500+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "aa4510361b0dc894054ac0b717a15de04c735c7afa347b3424b282fc8fd3b9a7",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    },
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/mnlim/model_c",
+      "dataset": "mnlim",
+      "input_sha256": "474b459b66bc3e55e7f74ac0b143f4e6fb253adb93c0bfe6a571d9c4fb44eed4",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "ebcbfb99335aba5a606db3d2dbe25f6f1f15c3cc6fac12ceec223391b21929ed",
+      "record_count": 20249,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 64,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:54:38.865233+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "f5f00f5a6246ec6cee2e64605026df648912e550c46468e9f132415968c2cc9b",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    },
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/mnlimm/model_c",
+      "dataset": "mnlimm",
+      "input_sha256": "b1848583ab00e6a0cbdbfde85e51e86e429e83df3976fb5bfab22d42e0f125d1",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "1e4621384478839ed6e0ee4193f547635b0be65f804564f292ecee08ea7e5e0f",
+      "record_count": 20257,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 64,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T11:59:00.432113+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "71395456039a193ff8a120d4930375d84ec7d21e1c0827718d31473701331cdc",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    },
+    {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/ensemble_filter_v1/sick/model_c",
+      "dataset": "sick",
+      "input_sha256": "b5f33b8174a2a594a3e2a201a71243d698796cbc71cf145da88448ebf31ed691",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "c6e5f8f2b2bee12bfc9d713bee51be8cc4b29764a74f56e6b5967e0819442d50",
+      "record_count": 10925,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "at_max_length_count": 0,
+        "batch_size": 64,
+        "device": "cuda:1",
+        "device_name": "NVIDIA GeForce RTX 3090",
+        "fp16": true,
+        "max_length": 256,
+        "python_version": "3.9.21",
+        "started_at_utc": "2026-10-04T12:02:02.134233+00:00",
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "430ce865c829384af1b5e8d568ac0bbd413cd33b71ea09b665e3a623fafaaead",
+      "tokenizer": {
+        "max_length": 256,
+        "padding": true,
+        "revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+        "truncation": true,
+        "use_fast": false
+      },
+      "tokenizer_evidence": {
+        "evaluator_sha256": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+        "use_fast": false
+      }
+    }
+  ],
+  "oom_events": [],
+  "reuse_counts": {
+    "historical_reuse": 10238,
+    "new_inference": 12185
+  }
+}

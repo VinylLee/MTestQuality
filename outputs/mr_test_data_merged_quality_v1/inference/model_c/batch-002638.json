@@ -1,0 +1,22 @@
+[
+  {
+    "batch_size": 16,
+    "input_token_count": 19,
+    "position": 42208,
+    "probabilities": {
+      "contradiction": 0.01027166,
+      "entailment": 0.00065217,
+      "neutral": 0.98907614
+    }
+  },
+  {
+    "batch_size": 16,
+    "input_token_count": 20,
+    "position": 42209,
+    "probabilities": {
+      "contradiction": 0.05188319,
+      "entailment": 0.00066113,
+      "neutral": 0.94745559
+    }
+  }
+]

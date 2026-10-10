@@ -1,0 +1,38 @@
+{
+  "files": {
+    "disagreements.jsonl": "f43cfe7b1e537e6a303bf57ee8ec5f124eb975cdc33b6183a08fb15d4194b88a",
+    "high_confidence_agreements.jsonl": "b686666a7772508cbfa4dc2449adb1b93d07aa4f6d2801401560a719cfe73f7c",
+    "pair_quality.jsonl": "6393be9c133b8873abf89c5de4e3adbacbd0b4b4996ce86e6b60d0f0a18e1f4e",
+    "predictions.jsonl": "37a51e8269b349786d37399d631ccb58d990af8d3ee7db12da3488c59d77c37a",
+    "reuse_provenance.json": "1508701fc9a17b88660fd8c74f4b6c48b1ceea00330662af400e599c95676985",
+    "summary.json": "0544ea4ff138a6593533462c3d2fea26af645faee612fea2ad04e897bf977465"
+  },
+  "identity": {
+    "config_sha256": "f770d4617c2cb5d6ab5ea5818b42e892bf8da9d9c28ea6bb80930a156a553a7d",
+    "history_receipts_sha256": "ac69c998b476e985d9c9e3d866f940abb2bc6f2389291b1d8bab20947db233ee",
+    "implementation_sha256": {
+      "evaluate_nli_quality.py": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+      "filter_nli_ensemble.py": "20fead3faf61d9b8afe75eb1f74d32d6b46b8dbf05945a160c3ccac859e9785b",
+      "refilter_ensemble_v1_1.py": "8556d43ff4096af0a947002bad7ce2e1c9777077a96f5d917f8dce056a9c2a29",
+      "run_merged_quality_audit.py": "c9ee4485eac886626b8eb14d8fd2a541a42e17eb73b8e449d110ecb9b4ca0b69"
+    },
+    "input_sha256": {
+      "mnlim": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "mnlimm": "0f0f83aeff374e4f3a63801d79b5b45216e25c5e4e0f1f9b0ac78bf51f12e3cc",
+      "sick": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "snli": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686"
+    },
+    "missing_inputs_sha256": "583cecbf12841c81710f345942288cea13a2ff0c78472f5263a4eb1f6e530180",
+    "model": {
+      "id": "model_c",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "name": "alisawuffles/roberta-large-wanli",
+      "revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59"
+    }
+  }
+}

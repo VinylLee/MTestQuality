@@ -1,0 +1,126 @@
+{
+  "config_sha256": "d81000b45c907472d84686f9645b2e6e321c0014938715b0ea69ba47a7f72050",
+  "dataset": "mnlim",
+  "inference_performed": false,
+  "input": {
+    "path": "/home/ubuntu/MTestQuality/data/mr_test_data_merged/mnlim.jsonl",
+    "record_count": 22423,
+    "sha256": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866"
+  },
+  "models": {
+    "model_a": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/mnlim/model_a",
+      "input_sha256": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "0e72cb5702a642289990f60ed971c5cfa026fcaf74ecc161bf482d6b52f38250",
+      "record_count": 22423,
+      "requested_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "2f4415b480f615cc8b144f84812cc0c5e6d0785a58ac22863eead711771aa8f6"
+    },
+    "model_b": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/mnlim/model_b",
+      "input_sha256": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "label_order": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "mapping_source": "https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/blob/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json",
+      "model_name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "predictions_sha256": "5288319721189a8162102fddc829c4a012d372daa8f99582dd9140f1cafe56e6",
+      "record_count": 22423,
+      "requested_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "resolved_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "86f915b0bff7fa4aced42fd882c46b68de9bdc866b694e682a28306cd0d0112d"
+    },
+    "model_c": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/mnlim/model_c",
+      "input_sha256": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "6f7275e9f5c8669c1fcb7061aea506a6aec5f56499f98091fcda21d73b874f65",
+      "record_count": 22423,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "4f3f7fd4bd7402d54b6eaa2dd7184d5889a64921b97f1eded2d27e21c2b39e13"
+    },
+    "model_d": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/mnlim/model_d",
+      "input_sha256": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "label_order": [
+        "contradiction",
+        "neutral",
+        "entailment"
+      ],
+      "mapping_source": "https://huggingface.co/facebook/bart-large-mnli/blob/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json",
+      "model_name": "facebook/bart-large-mnli",
+      "predictions_sha256": "c25d559ab640edac14afa936cf0b58ff6bd6e94be19024d4046af6ef40152e52",
+      "record_count": 22423,
+      "requested_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "resolved_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "97a6855ed98c05845f98dc67a7733f7f484b43cf3caac949b3b7ab3bc9d58101"
+    }
+  },
+  "output_sha256": {
+    "ensemble_predictions.jsonl": "790ffa6070a1bc3be50d730cca22dd952caac815b1c11e0502cbef95a8c6db9c",
+    "ensemble_summary.json": "9f491cecf84a56695c36b455481f4fd605c85e612ba9013b93d0e23ee6b8125c",
+    "filtered.jsonl": "ffe5a07efdf27802bf2ed136a65cf74bfec6d4f274e12edf0498f1dbc519a0d3",
+    "policy_diff_from_v1.json": "716ee96ae583bfbf1b66697cbd8b6ba52dcece322bf9e314b654e00005ec8c93",
+    "removed.jsonl": "10dacb9b96d9a9f622bd36415151d9c1d2007ea6f9c97b4a5acadc9acd237bdb",
+    "rescued_from_v1.jsonl": "8e490f950b6e8ebfffc00eb0d48c1a5dfd8657bedbb5fb87cb52342565bc1157"
+  },
+  "schema_version": "1.1",
+  "source_v1_manifest_sha256": "819b20708d022888986ff35077b2c4d2b0707bf98891c8f1c6660ed2d9a75145"
+}

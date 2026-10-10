@@ -1,0 +1,16 @@
+{
+  "datasets": ["snli", "mnlim", "mnlimm", "sick"],
+  "dataset_paths": {
+    "snli": "data/mr_test_data_merged/snli.jsonl",
+    "mnlim": "data/mr_test_data_merged/mnlim.jsonl",
+    "mnlimm": "data/mr_test_data_merged/mnlimm.jsonl",
+    "sick": "data/mr_test_data_merged/sick.jsonl"
+  },
+  "output_root": "outputs/mr_test_data_merged_quality_v1",
+  "history_root": "outputs/ensemble_filter_v1",
+  "backup_manifest": "backups/mr_test_data_merged_original/manifest.json",
+  "remote_backup_receipt": "backups/mr_test_data_merged_original/remote_verification.json",
+  "runtime": {"device": "cuda:1", "batch_size": 16, "max_length": 256, "fp16": true},
+  "min_free_gpu_mib": 6000,
+  "gpu_wait_seconds": 30
+}

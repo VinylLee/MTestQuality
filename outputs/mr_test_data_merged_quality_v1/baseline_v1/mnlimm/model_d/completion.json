@@ -1,0 +1,38 @@
+{
+  "files": {
+    "disagreements.jsonl": "9dc111e2d91b7f4a0cb65fa4c91b13de6af2276a66b64d222cabc3846e2fd556",
+    "high_confidence_agreements.jsonl": "ba05c79776f061b9342d277a85e152e19af6341770a5a8cc71e5c6fec1a4d11a",
+    "pair_quality.jsonl": "a447f2472c47f29ed04db2f035cedca91e7e6a543725243cef2d843ca778e7c5",
+    "predictions.jsonl": "2bf95f4f6e3f693791f7cabae4d7b03001a58248651567943772f7bb807858e7",
+    "reuse_provenance.json": "277438f0d21298494bacb2aa0bcd82b70c01681ebfa486b7bee01735c59bbc2c",
+    "summary.json": "7265442125b4a0f338cf78d7c0603964788561a5c1e83b0467e2d48c9250d35f"
+  },
+  "identity": {
+    "config_sha256": "f770d4617c2cb5d6ab5ea5818b42e892bf8da9d9c28ea6bb80930a156a553a7d",
+    "history_receipts_sha256": "bac087d182e0a4df11719c9a328ed61dd101a989267ac0685ec1ef1c9bce86bc",
+    "implementation_sha256": {
+      "evaluate_nli_quality.py": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+      "filter_nli_ensemble.py": "20fead3faf61d9b8afe75eb1f74d32d6b46b8dbf05945a160c3ccac859e9785b",
+      "refilter_ensemble_v1_1.py": "8556d43ff4096af0a947002bad7ce2e1c9777077a96f5d917f8dce056a9c2a29",
+      "run_merged_quality_audit.py": "c9ee4485eac886626b8eb14d8fd2a541a42e17eb73b8e449d110ecb9b4ca0b69"
+    },
+    "input_sha256": {
+      "mnlim": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "mnlimm": "0f0f83aeff374e4f3a63801d79b5b45216e25c5e4e0f1f9b0ac78bf51f12e3cc",
+      "sick": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "snli": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686"
+    },
+    "missing_inputs_sha256": "28c04469e6044fbf5487f0945dbcafc101ef9618deaac63bbda76c73672d9439",
+    "model": {
+      "id": "model_d",
+      "label_order": [
+        "contradiction",
+        "neutral",
+        "entailment"
+      ],
+      "mapping_source": "https://huggingface.co/facebook/bart-large-mnli/blob/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json",
+      "name": "facebook/bart-large-mnli",
+      "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce"
+    }
+  }
+}

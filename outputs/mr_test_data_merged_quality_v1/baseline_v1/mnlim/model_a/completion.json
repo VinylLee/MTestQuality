@@ -1,0 +1,38 @@
+{
+  "files": {
+    "disagreements.jsonl": "9106d288eb1d13d84dd142c4322c8abc92bbc88f3bb89a4c69f89d076db66893",
+    "high_confidence_agreements.jsonl": "51b2890ebd8ad447ae45522cbeb9bdcb804d287def793746513ca7af092e2195",
+    "pair_quality.jsonl": "e857344e4d671f37f65e69e2c87f46241ace7e6f893c205b609b0c748ff8e5bb",
+    "predictions.jsonl": "0e72cb5702a642289990f60ed971c5cfa026fcaf74ecc161bf482d6b52f38250",
+    "reuse_provenance.json": "0849af30502011c707dc43b55764014d1fbe08e7745e2ceedd7fc8d33b389fec",
+    "summary.json": "2f4415b480f615cc8b144f84812cc0c5e6d0785a58ac22863eead711771aa8f6"
+  },
+  "identity": {
+    "config_sha256": "f770d4617c2cb5d6ab5ea5818b42e892bf8da9d9c28ea6bb80930a156a553a7d",
+    "history_receipts_sha256": "4c76673a80c8d9d19fec16816a8a2cca636e07ecef99a7690baadc617f9881bf",
+    "implementation_sha256": {
+      "evaluate_nli_quality.py": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+      "filter_nli_ensemble.py": "20fead3faf61d9b8afe75eb1f74d32d6b46b8dbf05945a160c3ccac859e9785b",
+      "refilter_ensemble_v1_1.py": "8556d43ff4096af0a947002bad7ce2e1c9777077a96f5d917f8dce056a9c2a29",
+      "run_merged_quality_audit.py": "c9ee4485eac886626b8eb14d8fd2a541a42e17eb73b8e449d110ecb9b4ca0b69"
+    },
+    "input_sha256": {
+      "mnlim": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "mnlimm": "0f0f83aeff374e4f3a63801d79b5b45216e25c5e4e0f1f9b0ac78bf51f12e3cc",
+      "sick": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "snli": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686"
+    },
+    "missing_inputs_sha256": "ce3f14004e218447535bab21dae60381107bb06ee0d4e790d78d3f84aa68e95c",
+    "model": {
+      "id": "model_a",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "name": "cross-encoder/nli-deberta-v3-large",
+      "revision": "bab4bc7178836f731dcfd18c06ca9def0a137712"
+    }
+  }
+}

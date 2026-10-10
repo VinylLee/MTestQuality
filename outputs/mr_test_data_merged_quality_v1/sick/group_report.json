@@ -1,0 +1,185 @@
+{
+  "exact_conflicts": [
+    {
+      "group_id": "9fd529c6e493c97ed76cd115e298160f0bd38e0c54af128817392453771ecf93",
+      "labels": [
+        0,
+        2
+      ],
+      "row_positions": [
+        4277,
+        4278
+      ],
+      "source_positions": [
+        4278
+      ]
+    }
+  ],
+  "exact_duplicates": [
+    {
+      "group_id": "a2a7aa2af5d747a54a41bea233e0f4b05448d92212f5c25582814072e86e851e",
+      "labels": [
+        2
+      ],
+      "row_positions": [
+        78,
+        86
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "800500cd4a6d3239a62946d96c9e762c6a8262a4a3f38158c212890d57bb6964",
+      "labels": [
+        2
+      ],
+      "row_positions": [
+        3309,
+        3317
+      ],
+      "source_positions": [
+        3309
+      ]
+    },
+    {
+      "group_id": "4945efadb97d975411e5f2da61d0d78653af6fcbb0bacc1d80fed7d76a1888a3",
+      "labels": [
+        2
+      ],
+      "row_positions": [
+        5716,
+        5721
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "2c4a4c38256013379af173c2b41da5686794509d97ebcd4089d75661e58a35be",
+      "labels": [
+        0
+      ],
+      "row_positions": [
+        7372,
+        7379
+      ],
+      "source_positions": [
+        7372
+      ]
+    },
+    {
+      "group_id": "168772fb03d6ce4e94f51ab6a729b49bb640d9163845e196a20aceebe1069e6c",
+      "labels": [
+        0
+      ],
+      "row_positions": [
+        8841,
+        8842
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "c5e737a54a2beca83d813eeb4c9379ec1c192bd83bae1e6680f723f573bfc3d6",
+      "labels": [
+        0
+      ],
+      "row_positions": [
+        9366,
+        9374
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "cb622a3c935dd61c564d2a1f3d325ac2823b210fd3fda72a264865fd96ce0c97",
+      "labels": [
+        0
+      ],
+      "row_positions": [
+        10005,
+        10010
+      ],
+      "source_positions": []
+    }
+  ],
+  "format_only_augmentation_positions": [],
+  "normalization_only_groups": [],
+  "normalized_conflicts": [
+    {
+      "group_id": "9fd529c6e493c97ed76cd115e298160f0bd38e0c54af128817392453771ecf93",
+      "labels": [
+        0,
+        2
+      ],
+      "row_positions": [
+        4277,
+        4278
+      ],
+      "source_positions": [
+        4278
+      ]
+    }
+  ],
+  "normalized_duplicates": [
+    {
+      "group_id": "6c57a05668a8b1061573c263a85a00e6b51f7ee4e97cebfd0f6748027a8177c9",
+      "row_positions": [
+        78,
+        86
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "c5987f57202de4406d12f7d01e226da0e265f2253b19afadd891f6b32d228bc4",
+      "row_positions": [
+        3309,
+        3317
+      ],
+      "source_positions": [
+        3309
+      ]
+    },
+    {
+      "group_id": "bf9c8bd91c724ec0ebe10fa381fad79765aecacd94a5e193545760efcf81ffc3",
+      "row_positions": [
+        5716,
+        5721
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "55595f7137a8ae1c6c82d767a414ebdfaef05080e6b44a315e3b8fb04696f033",
+      "row_positions": [
+        7372,
+        7379
+      ],
+      "source_positions": [
+        7372
+      ]
+    },
+    {
+      "group_id": "ead955458ff1fa858ed5703863c100cf5b655c84f6f363542fc136c44c1a576e",
+      "row_positions": [
+        8841,
+        8842
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "a66a67a2a50c99e6976fc679447c4b824fefb819fd5f9d1113742cea67acec57",
+      "row_positions": [
+        9366,
+        9374
+      ],
+      "source_positions": []
+    },
+    {
+      "group_id": "313559f98336a2f91186b24dfaeb555f753c3ea8405393e3548b5aba25b9c70e",
+      "row_positions": [
+        10005,
+        10010
+      ],
+      "source_positions": []
+    }
+  ],
+  "record_count": 10655,
+  "source_count": 4906,
+  "structural_issues": [],
+  "unchanged_augmentation_positions": []
+}

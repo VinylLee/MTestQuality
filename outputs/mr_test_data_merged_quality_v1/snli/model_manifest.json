@@ -1,0 +1,136 @@
+{
+  "baseline_v1_manifest_sha256": "27b939c16db099c13a6b7fd85d5d90086792d75f937e7e68de9ab617acd85433",
+  "config_sha256": "f770d4617c2cb5d6ab5ea5818b42e892bf8da9d9c28ea6bb80930a156a553a7d",
+  "decision_order": [
+    "source",
+    "label_conflict",
+    "model_v1_1",
+    "duplicate"
+  ],
+  "input_sha256": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686",
+  "model_v1_1_manifest_sha256": "ea02f9f2cfba17137cb813ed2dfa825e5b78f0f735faca82f0c8ffb87267c9d0",
+  "models": {
+    "model_a": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/snli/model_a",
+      "input_sha256": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/cross-encoder/nli-deberta-v3-large/blob/bab4bc7178836f731dcfd18c06ca9def0a137712/config.json",
+      "model_name": "cross-encoder/nli-deberta-v3-large",
+      "predictions_sha256": "768a88ed564f92a95da72b259e5dfe0c2444b40f7edb4f536d5fc4c3f1094214",
+      "record_count": 22548,
+      "requested_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "resolved_revision": "bab4bc7178836f731dcfd18c06ca9def0a137712",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "a50f33186cc248129220a52e12a87418b0e48fdf98c4622551cf1a7dce9b10c5"
+    },
+    "model_b": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/snli/model_b",
+      "input_sha256": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686",
+      "label_order": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "mapping_source": "https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/blob/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json",
+      "model_name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "predictions_sha256": "fe97e137bd965bf3a83daa8a59d41d6edcfe83deb67bd907b922795b1fc5a279",
+      "record_count": 22548,
+      "requested_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "resolved_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "ec399432b41758e02bf93e10cf3324c27c4c637598590680ff0c7790368c053e"
+    },
+    "model_c": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/snli/model_c",
+      "input_sha256": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686",
+      "label_order": [
+        "contradiction",
+        "entailment",
+        "neutral"
+      ],
+      "mapping_source": "https://huggingface.co/alisawuffles/roberta-large-wanli/blob/42a3e357c1a17b97688c4b8c7b6959e446883f59/config.json",
+      "model_name": "alisawuffles/roberta-large-wanli",
+      "predictions_sha256": "7d4f7ffee172ae0b3a84f4f02f2b5c17c2954944eaa93c5956ae51df5e35208f",
+      "record_count": 22548,
+      "requested_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "resolved_revision": "42a3e357c1a17b97688c4b8c7b6959e446883f59",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "fd2b4b734900bce713cf5a5636c735073bd59a993539637cfa91340e10c6c676"
+    },
+    "model_d": {
+      "audit_directory": "/home/ubuntu/MTestQuality/outputs/mr_test_data_merged_quality_v1/baseline_v1/snli/model_d",
+      "input_sha256": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686",
+      "label_order": [
+        "contradiction",
+        "neutral",
+        "entailment"
+      ],
+      "mapping_source": "https://huggingface.co/facebook/bart-large-mnli/blob/d7645e127eaf1aefc7862fd59a17a5aa8558b8ce/config.json",
+      "model_name": "facebook/bart-large-mnli",
+      "predictions_sha256": "7d72c2a479df27960ac5bf2f3bf53a4c023ed89c4a1682e4733c267d23b297a4",
+      "record_count": 22548,
+      "requested_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "resolved_revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+      "runtime": {
+        "batch_size": 16,
+        "batch_size_note": "requested batch size; actual historical/batch parameters in provenance",
+        "device": "cuda:1",
+        "fp16": true,
+        "max_length": 256,
+        "mixed_prediction_origins": true,
+        "torch_version": "1.12.1+cu113",
+        "transformers_version": "4.29.2"
+      },
+      "summary_sha256": "b175409c85b84fe1cd8749400b1594ef57647e86fbf63ad5c441ee7b78c43422"
+    }
+  },
+  "normalization": "NFC Unicode and collapsed whitespace, comparison only, per dataset",
+  "output_sha256": {
+    "conflict_quarantine.jsonl": "5ef9e502e5a183b27853dcf97ac745ff292d213d4c41f12b7ee06d78b464dc6d",
+    "ensemble_predictions.jsonl": "eca1fcb38e51ccc2838040a245189f80b9fafac14ecee1e0921e88271538a504",
+    "ensemble_summary.json": "84d72d01910c6264d9877b377e7d8abe1221456f65699a9164eb8fbc5830c27f",
+    "filtered.jsonl": "80b471b869b58ff9fae598e1bdfb008ed1959e3c57c94a81d7eb50b5245f80e8",
+    "group_report.json": "4d74a511d7f61c712f89cb638d39ac02e1025d9dc4dafb43a0ec7632404363d4",
+    "removed.jsonl": "1a4ca757e96f356e7e5c61603f03364e2beb7b9285be826591ea2e592f9aaa11",
+    "source_warnings.jsonl": "01dda824a13ada7669ea28224d7e97b222a9bb674784e4a1606d99a25b8612f0"
+  },
+  "validation": {
+    "conflicts_and_duplicates_checked": true,
+    "decisions_reproduced": true,
+    "raw_fields_unchanged": true,
+    "rows_checked": 22548,
+    "source_preserved": 9824,
+    "verified": true
+  }
+}

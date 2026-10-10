@@ -1,0 +1,38 @@
+{
+  "files": {
+    "disagreements.jsonl": "3e746e67cf69b62534acf1b78452c809507e30a13c293098e369d899c74f1b0e",
+    "high_confidence_agreements.jsonl": "95f7c7f387e9938b732b29f65ca72a926075d7265b16d3094212a82740b04b9f",
+    "pair_quality.jsonl": "80ff8531b109890cffa4ddb319093f8cf48d5e63b4d93d5f45ad2c11b6801e56",
+    "predictions.jsonl": "5288319721189a8162102fddc829c4a012d372daa8f99582dd9140f1cafe56e6",
+    "reuse_provenance.json": "25fbecae04e10e8f306b04688b9a443b0b1ada3d8b78cf1f347d099b16e90780",
+    "summary.json": "86f915b0bff7fa4aced42fd882c46b68de9bdc866b694e682a28306cd0d0112d"
+  },
+  "identity": {
+    "config_sha256": "f770d4617c2cb5d6ab5ea5818b42e892bf8da9d9c28ea6bb80930a156a553a7d",
+    "history_receipts_sha256": "c47f60ffd59194054c95db1812b58720d4e2ef26af1b4096536cf3e2b49d6418",
+    "implementation_sha256": {
+      "evaluate_nli_quality.py": "e23ad182d979c66b91251fddd4b258a30bd57d94f200cf6265bae98230e14d7f",
+      "filter_nli_ensemble.py": "20fead3faf61d9b8afe75eb1f74d32d6b46b8dbf05945a160c3ccac859e9785b",
+      "refilter_ensemble_v1_1.py": "8556d43ff4096af0a947002bad7ce2e1c9777077a96f5d917f8dce056a9c2a29",
+      "run_merged_quality_audit.py": "c9ee4485eac886626b8eb14d8fd2a541a42e17eb73b8e449d110ecb9b4ca0b69"
+    },
+    "input_sha256": {
+      "mnlim": "e04ebb37cd96a830e1a4d7c41c072e67f1487ebdfb8751d37fa82c92dc1cb866",
+      "mnlimm": "0f0f83aeff374e4f3a63801d79b5b45216e25c5e4e0f1f9b0ac78bf51f12e3cc",
+      "sick": "99469d3c258919272e58b7e62f5e85ec7c717bbd5d0f5db52d7cea38cdc4d811",
+      "snli": "d6f1486b13cfbc1868ad4ba626ad5bc918a9096e97c7e23da14269329ccc3686"
+    },
+    "missing_inputs_sha256": "29a75c424e12a65e9b9f4d87ad48de51a8d9934c7a15dbb9cf45c7f67a6b7977",
+    "model": {
+      "id": "model_b",
+      "label_order": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "mapping_source": "https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/blob/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7/config.json",
+      "name": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7"
+    }
+  }
+}

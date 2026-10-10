@@ -74,9 +74,15 @@ class V11FullRunTests(unittest.TestCase):
             receipt = self.summary[receipt_key]
             actual = refilter.snapshot_tree(root)
             self.assertTrue(receipt["verified"])
-            self.assertEqual(receipt["file_count_before"], len(actual))
-            self.assertEqual(set(receipt["files"]), set(actual))
-            for name, info in actual.items():
+            if receipt_key == "original_data_integrity":
+                # New datasets may be added; every historically receipted file
+                # must still exist with unchanged bytes. V1 stays strictly frozen.
+                self.assertLessEqual(set(receipt["files"]), set(actual))
+            else:
+                self.assertEqual(receipt["file_count_before"], len(actual))
+                self.assertEqual(set(receipt["files"]), set(actual))
+            for name in receipt["files"]:
+                info = actual[name]
                 for key, value in info.items():
                     self.assertEqual(receipt["files"][name][f"{key}_before"], receipt["files"][name][f"{key}_after"])
                     # A Git checkout changes mtimes. Receipts prove run-time mtime

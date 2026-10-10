@@ -1,0 +1,137 @@
+test_normalized_labels (test_ensemble_filter.EvaluatorCompatibilityTests) ... ok
+test_unpinned_config_rejected (test_ensemble_filter.EvaluatorCompatibilityTests) ... ok
+test_verified_model_orders_and_generic_fallback (test_ensemble_filter.EvaluatorCompatibilityTests) ... ok
+test_cannot_overwrite_inputs_or_existing_output (test_ensemble_filter.FileIntegrationTests) ... ok
+test_conservation_order_and_source_preservation (test_ensemble_filter.FileIntegrationTests) ... ok
+test_dataset_without_sources_keeps_all_invalid_pairs (test_ensemble_filter.FileIntegrationTests) ... ok
+test_deterministic_outputs (test_ensemble_filter.FileIntegrationTests) ... ok
+test_hash_mismatch_rejected (test_ensemble_filter.FileIntegrationTests) ... ok
+test_incomplete_individual_record_kept (test_ensemble_filter.FileIntegrationTests) ... ok
+test_low_source_accuracy_rejected (test_ensemble_filter.FileIntegrationTests) ... ok
+test_missing_and_excess_records_rejected (test_ensemble_filter.FileIntegrationTests) ... ok
+test_nan_inf_bad_sum_and_top1_rejected (test_ensemble_filter.FileIntegrationTests) ... ok
+test_original_field_types_cannot_change (test_ensemble_filter.FileIntegrationTests) ... ok
+test_revision_mismatch_rejected (test_ensemble_filter.FileIntegrationTests) ... ok
+test_row_position_and_original_fields_rejected (test_ensemble_filter.FileIntegrationTests) ... ok
+test_runner_sequence_resume_and_failure (test_ensemble_filter.FileIntegrationTests) ... Dataset snli: 5 records, 0 invalid augmented pair structures
+Completed snli: removed 1/3 augmented rows
+Dataset snli: 5 records, 0 invalid augmented pair structures
+Validated cached audit: /tmp/tmplgyoaop8/runner/snli/model_a
+Validated cached audit: /tmp/tmplgyoaop8/runner/snli/model_b
+Validated cached audit: /tmp/tmplgyoaop8/runner/snli/model_c
+Validated cached audit: /tmp/tmplgyoaop8/runner/snli/model_d
+Completed snli: removed 1/3 augmented rows
+Dataset snli: 5 records, 0 invalid augmented pair structures
+Audit failed; diagnostic files preserved in /tmp/tmplgyoaop8/failure/snli/.model_a-xnalwisg. No ensemble was published.
+ok
+test_sensitivity_and_aggregate_statistics (test_ensemble_filter.FileIntegrationTests) ... ok
+test_threshold_uses_probability_not_inconsistent_confidence (test_ensemble_filter.FileIntegrationTests) ... ok
+test_duplicate_source_keep (test_ensemble_filter.PolicyTests) ... ok
+test_high_confidence_gold_blocker (test_ensemble_filter.PolicyTests) ... ok
+test_incomplete_individual_prediction_keep (test_ensemble_filter.PolicyTests) ... ok
+test_ineligible_gold_support_does_not_block (test_ensemble_filter.PolicyTests) ... ok
+test_integer_and_string_pair_ids_distinct (test_ensemble_filter.PolicyTests) ... ok
+test_low_confidence_source_does_not_vote (test_ensemble_filter.PolicyTests) ... ok
+test_missing_auditor_cannot_delete (test_ensemble_filter.PolicyTests) ... ok
+test_missing_pair_and_nonboolean_flag_keep (test_ensemble_filter.PolicyTests) ... ok
+test_missing_source_keep (test_ensemble_filter.PolicyTests) ... ok
+test_only_two_wrong_votes_keep (test_ensemble_filter.PolicyTests) ... ok
+test_source_and_augmented_gold_labels_can_differ (test_ensemble_filter.PolicyTests) ... ok
+test_source_never_removed (test_ensemble_filter.PolicyTests) ... ok
+test_split_wrong_labels_keep (test_ensemble_filter.PolicyTests) ... ok
+test_three_same_wrong_votes_drop (test_ensemble_filter.PolicyTests) ... ok
+test_threshold_boundaries_inclusive (test_ensemble_filter.PolicyTests) ... ok
+test_wrong_source_does_not_vote (test_ensemble_filter.PolicyTests) ... ok
+test_all_datasets_output_conservation_order_diff_and_integrity (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... snli: V1 removed=5, V1.1 removed=3, rescued=2
+mnlim: V1 removed=5, V1.1 removed=2, rescued=3
+mnlimm: V1 removed=5, V1.1 removed=2, rescued=3
+sick: V1 removed=5, V1.1 removed=1, rescued=4
+ok
+test_file_count_integrity_detects_added_file (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_invalid_pair_and_incomplete_evidence_keep (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_manifest_identity_missing_anchor_rejected (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... snli: V1 removed=5, V1.1 removed=3, rescued=2
+ok
+test_mismatched_repeated_source_rejected (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_missing_ensemble_field_offline_join (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... snli: V1 removed=5, V1.1 removed=3, rescued=2
+mnlim: V1 removed=5, V1.1 removed=2, rescued=3
+mnlimm: V1 removed=5, V1.1 removed=2, rescued=3
+sick: V1 removed=5, V1.1 removed=1, rescued=4
+ok
+test_missing_source_field_offline_join (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... snli: V1 removed=5, V1.1 removed=3, rescued=2
+mnlim: V1 removed=5, V1.1 removed=2, rescued=3
+mnlimm: V1 removed=5, V1.1 removed=2, rescued=3
+sick: V1 removed=5, V1.1 removed=1, rescued=4
+ok
+test_model_artifact_hash_tamper_rejected (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_mtime_change_during_run_fails_without_publish (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... snli: V1 removed=5, V1.1 removed=3, rescued=2
+mnlim: V1 removed=5, V1.1 removed=2, rescued=3
+mnlimm: V1 removed=5, V1.1 removed=2, rescued=3
+sick: V1 removed=5, V1.1 removed=1, rescued=4
+ok
+test_no_individual_prediction_read_when_ensemble_complete (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... snli: V1 removed=5, V1.1 removed=3, rescued=2
+mnlim: V1 removed=5, V1.1 removed=2, rescued=3
+mnlimm: V1 removed=5, V1.1 removed=2, rescued=3
+sick: V1 removed=5, V1.1 removed=1, rescued=4
+ok
+test_no_inference_modules_imported_in_complete_offline_run (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_original_dataset_hash_tamper_rejected (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_original_fields_type_change_rejected (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_output_overlap_and_overwrite_refused (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... snli: V1 removed=5, V1.1 removed=3, rescued=2
+mnlim: V1 removed=5, V1.1 removed=2, rescued=3
+mnlimm: V1 removed=5, V1.1 removed=2, rescued=3
+sick: V1 removed=5, V1.1 removed=1, rescued=4
+ok
+test_v1_partition_hash_tamper_rejected (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_v1_partition_order_rejected_even_updated_hash (test_ensemble_filter_v1_1.OfflineIntegrationTests) ... ok
+test_anchor_uses_actual_identity_not_model_c (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_conditional_before_gold_blocker (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_conditional_both_fields_protected_all_datasets (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_conditional_match_exact_not_fuzzy (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_config_rejects_nonformal_policies (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_gold_089_does_not_block_snli_three_votes (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_gold_blocker_091_blocks_three_wrong_votes (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_gold_sensitivity_fixed_at_090 (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_gold_threshold_inclusive (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_ineligible_gold_support_does_not_block (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_invalid_incomplete_before_conditional (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_mnli_abc_with_anchor_drops_both_splits (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_mnli_abd_missing_wanli_anchor_keeps_both_splits (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_sick_four_eligible_same_wrong_drops (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_sick_four_predictions_but_one_source_ineligible_keeps (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_sick_three_wrong_votes_kept (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_snli_three_votes_without_wanli_still_drop (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_source_always_first_priority_even_incomplete_conditional (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_source_and_wrong_threshold_inclusive (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_split_wrong_labels_never_combined (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_typed_pairs_missing_and_duplicate_sources (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_v1_decision_is_persisted_not_simulated (test_ensemble_filter_v1_1.PolicyTests) ... ok
+test_all_real_decisions_and_output_conservation (test_full_run.FullRunAcceptanceTests) ... ok
+test_cross_dataset_summary_and_sensitivity (test_full_run.FullRunAcceptanceTests) ... ok
+test_original_data_and_legacy_audit_unchanged (test_full_run.FullRunAcceptanceTests) ... ok
+test_all_real_rows_evidence_raw_fields_partitions_and_diffs (test_full_run_v1_1.V11FullRunTests) ... ok
+test_real_aggregate_sensitivity_and_rescue_accounting (test_full_run_v1_1.V11FullRunTests) ... ok
+test_real_protected_inputs_match_before_after_receipts (test_full_run_v1_1.V11FullRunTests) ... ok
+test_conflict_quarantines_every_augmentation_including_conditional (test_merged_quality_audit.DeterministicQualityTests) ... ok
+test_no_case_punctuation_or_cross_dataset_deduplication (test_merged_quality_audit.DeterministicQualityTests) ... ok
+test_no_change_and_format_only_reports (test_merged_quality_audit.DeterministicQualityTests) ... ok
+test_representative_chosen_after_model_filtering (test_merged_quality_audit.DeterministicQualityTests) ... ok
+test_source_priority_and_all_sources_retained (test_merged_quality_audit.DeterministicQualityTests) ... ok
+test_structure_does_not_guess_or_repair (test_merged_quality_audit.DeterministicQualityTests) ... ok
+test_unicode_whitespace_comparison_preserves_raw_text (test_merged_quality_audit.DeterministicQualityTests) ... ok
+test_cache_ambiguity_is_sticky (test_merged_quality_audit.ProbabilityAndResumeTests) ... ok
+test_checkpoint_resume_hash_and_identity (test_merged_quality_audit.ProbabilityAndResumeTests) ... ok
+test_invalid_probability_rejected (test_merged_quality_audit.ProbabilityAndResumeTests) ... ok
+test_label_metrics_rebuilt (test_merged_quality_audit.ProbabilityAndResumeTests) ... ok
+test_oom_batch_sequence (test_merged_quality_audit.ProbabilityAndResumeTests) ... ok
+test_real_inference_loop_oom_retries_and_resumes_without_model_loading (test_merged_quality_audit.ProbabilityAndResumeTests) ... model_a: OOM, retrying batch size 8
+model_a: OOM, retrying batch size 4
+model_a: inferred 19/19 unique inputs, batch 4
+ok
+test_all_artifact_hashes (test_merged_quality_audit.RealMergedAcceptanceTests) ... ok
+test_all_rows_fields_decisions_and_partitions (test_merged_quality_audit.RealMergedAcceptanceTests) ... ok
+test_every_prediction_has_exact_input_provenance_and_current_gold_metrics (test_merged_quality_audit.RealMergedAcceptanceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 94 tests in 134.943s
+
+OK

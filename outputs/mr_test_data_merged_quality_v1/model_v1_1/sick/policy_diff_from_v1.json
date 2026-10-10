@@ -1,0 +1,48 @@
+{
+  "changes_by_reason": {
+    "conditional_clause_auto_drop_disabled": 0,
+    "gold_support_block": 5,
+    "mnli_wrong_consensus_missing_wanli_anchor": 0,
+    "sick_requires_unanimous_consensus": 52
+  },
+  "dataset": "sick",
+  "drop_to_keep": 57,
+  "keep_to_drop": 0,
+  "rescued_by": {
+    "consensus_size": {
+      "3/4": 57
+    },
+    "dataset": {
+      "sick": 57
+    },
+    "gold_label": {
+      "contradiction": 53,
+      "entailment": 1,
+      "neutral": 3
+    },
+    "mr_id": {
+      "adding_contradiction": 45,
+      "antonym_substitution": 5,
+      "pronoun_substitution": 1,
+      "synonym_replacement": 6
+    },
+    "mr_type": {
+      "flip": 50,
+      "inv": 7
+    },
+    "reason": {
+      "conditional_clause_auto_drop_disabled": 0,
+      "gold_support_block": 5,
+      "mnli_wrong_consensus_missing_wanli_anchor": 0,
+      "sick_requires_unanimous_consensus": 52
+    },
+    "wrong_consensus_label": {
+      "entailment": 10,
+      "neutral": 47
+    }
+  },
+  "unchanged_drop": 68,
+  "unchanged_keep": 10530,
+  "v1_1_removed": 68,
+  "v1_removed": 125
+}
